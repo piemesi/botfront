@@ -1,0 +1,260 @@
+@import url(//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);html {
+  height: auto;
+  height: 100%;
+}
+body {
+  height: 100%;
+  min-height: 100%;
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+}
+.page-wrap {
+  height: calc(100%);
+  min-height: 100%;
+  height: auto !important;
+  /* cross-browser */
+  height: 100%;
+  /* cross-browser */
+  display: flex;
+  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: stretch;
+  align-content: space-between;
+  flex-grow: 1;
+}
+#app {
+  height: auto !important;
+  /* cross-browser */
+  height: 100%;
+  display: flex;
+  height: inherit;
+  flex-direction: column;
+  flex-grow: 1;
+}
+.search-div {
+  flex-grow: 1;
+  align-self: flex-start;
+  overflow-y: auto;
+  width: 100%;
+}
+.footer {
+  height: 100px;
+  align-content: flex-end;
+  justify-content: flex-end;
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+.footer > div {
+  flex-grow: 1;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+.workspace {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 100%;
+  align-items: stretch;
+}
+.instantSearch {
+  background: coral;
+  flex-grow: 1;
+}
+.instantOfferTable td,
+.instantOfferTable th {
+  padding: 2px !important;
+}
+.searcher-div {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.date-range-div {
+  z-index: 400;
+}
+.sso {
+  font-family: 'Geometria'; }
+  .sso h1 {
+    font-weight: 300;
+    font-family: 'Geometria';
+    font-size: 18pt;
+    line-height: 21pt;
+    margin-top: 35px;
+    text-align: left; }
+  .sso-bg-back {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+  .sso-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px; }
+  .sso-header {
+    padding-left: 31px;
+    padding-top: 29px;
+    display: flex; }
+    .sso-header__name .name-main {
+      color: #FF5000;
+      font-size: 24pt;
+      font-weight: bold;
+      letter-spacing: 2pt; }
+    .sso-header__name .name-info {
+      font-size: 14pt;
+      font-weight: bold;
+      letter-spacing: 2pt;
+      color: #fff;
+      line-height: 28px; }
+    .sso-header__info:before {
+      content: ' ';
+      background: #FF5000;
+      width: 2px;
+      height: 84px;
+      position: absolute;
+      margin-top: -27px;
+      margin-left: -34px;
+      -moz-transform: rotate(29deg);
+      -o-transform: rotate(29deg);
+      -webkit-transform: rotate(29deg);
+      filter: progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=0.7071067811865476, M12=0.7071067811865475, M21=-0.7071067811865475, M22=0.7071067811865476); }
+    .sso-header__info {
+      font-weight: bold;
+      line-height: 14px;
+      font-size: 11px;
+      color: #fff;
+      margin-left: 37px;
+      margin-top: 10px; }
+  .sso-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .sso-form__layout {
+      width: 360px;
+      border-radius: 2px;
+      display: inline-block;
+      padding: 0px 30px;
+      background: linear-gradient(-125deg, #792B8E, #532F91); }
+      .sso-form__layout .form__title {
+        font-family: 'Geometria';
+        font-size: 18pt;
+        color: #fff;
+        line-height: 21pt;
+        margin-top: 35px; }
+        .sso-form__layout .form__title span {
+          font-size: 16px; }
+    .sso-form__login-form .login-form__vk {
+      border-radius: 3px;
+      background-color: #507298;
+      width: 100%;
+      color: #fff;
+      font-family: 'Geometria';
+      margin-top: 32px;
+      height: 36px;
+      padding-bottom: 3px;
+      font-weight: bold; }
+    .sso-form__login-form .login-form__line {
+      border-radius: 1px;
+      margin-top: 32px;
+      text-align: center;
+      color: #fff; }
+      .sso-form__login-form .login-form__line span:before {
+        content: " ";
+        width: 44%;
+        height: 1px;
+        display: block;
+        background-color: #fff;
+        position: relative;
+        top: 12px; }
+      .sso-form__login-form .login-form__line span:after {
+        content: " ";
+        width: 44%;
+        height: 1px;
+        display: block;
+        background-color: #fff;
+        position: relative;
+        top: -8px;
+        right: -56%; }
+    .sso-form__login-form .login-form__login {
+      border-radius: 3px;
+      width: 100%;
+      background-color: transparent;
+      color: #fff;
+      border: 1px solid;
+      text-transform: inherit;
+      font-family: 'Geometria';
+      font-weight: bold;
+      margin-top: 35px;
+      height: 42px;
+      margin-bottom: 27px; }
+    .sso-form__login-email .login-email__next {
+      border-radius: 3px;
+      background-color: #FF4E06;
+      width: 100%;
+      color: #fff;
+      font-family: 'Geometria';
+      margin-top: 32px;
+      height: 42px;
+      font-weight: bold;
+      margin-bottom: 27px; }
+  .sso-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; }
+    .sso-footer__left-section {
+      padding-left: 16px;
+      padding-bottom: 9px; }
+      .sso-footer__left-section-em {
+        margin-left: 2px;
+        float: left; }
+      .sso-footer__left-section-text {
+        color: #dadada;
+        line-height: 18px;
+        padding-top: 23px;
+        padding-left: 8px;
+        float: left;
+        font-size: 9pt; }
+    .sso-footer__right-section {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end; }
+      .sso-footer__right-section .right-section-copy {
+        font-size: 9pt;
+        color: #dadada;
+        padding-right: 30px;
+        padding-bottom: 21px; }
+
+@media (max-width: 767px) {
+  .sso-bg-back {
+    background-image: none; }
+  .sso-header {
+    justify-content: center; }
+  .sso-footer > div {
+    display: none; }
+  .sso-form__layout {
+    background: transparent; }
+    .sso-form__layout.sso-paper {
+      box-shadow: none !important;
+      background: transparent !important; } }
+.fade-enter {
+  opacity: 0;
+  z-index: 1; }
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in; }
+
+/*# sourceMappingURL=bundle.css.map*/

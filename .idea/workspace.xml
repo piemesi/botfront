@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aab4f455-8df1-4516-8328-61b40e8beb56" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/Add/EditBody.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/List/ListFooter.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/List/MaterialsList.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/List/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/List/list.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/ShowPage/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/ShowPage/show.scss" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/components/Update/index.js" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/routing/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#2161#2218#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/components/ShowPage/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="90" column="43" lean-forward="false" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#345#404#0" expanded="true" />
+                <element signature="e#467#502#0" expanded="true" />
+                <element signature="e#602#622#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/Update/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#956#978#0" expanded="true" />
+                <element signature="e#3773#3917#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/ShowPage/show.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/Add/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="91">
+              <caret line="215" column="21" lean-forward="false" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
+              <folding>
+                <element signature="e#954#994#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ListItem.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/List/ListItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="205" column="53" lean-forward="false" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#719#754#0" expanded="true" />
+                <marker date="1499594071330" expanded="true" signature="7102:7184" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/components/List/list.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/css/main.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="505">
+              <caret line="127" column="1" lean-forward="false" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/containers/Pages/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="109" column="34" lean-forward="false" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/actions/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+              <folding>
+                <element signature="e#29#65#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="SCSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>m.s</find>
+      <find>tasks</find>
+      <find>update</find>
+      <find>спис</find>
+      <find>r</find>
+      <find>ru</find>
+      <find>ru'</find>
+      <find>'ru'</find>
+      <find>m</find>
+      <find>mo</find>
+      <find>mom</find>
+      <find>mome</find>
+      <find>momen</find>
+      <find>moment</find>
+      <find>forma</find>
+      <find>updateEditPage</find>
+      <find>content</find>
+      <find>GET_POSTS</find>
+      <find>Pro</find>
+      <find>timeToRead</find>
+      <find>localS</find>
+      <find>save</find>
+      <find>Rout</find>
+      <find>Пока</find>
+      <find>show</find>
+      <find>header</find>
+      <find>previe</find>
+      <find>need_link</find>
+      <find>minutes_to_read</find>
+      <find>dial</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>UpdatePage</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/app</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/temp/webpack-dev-server.config.js" />
+        <option value="$PROJECT_DIR$/temp/src/app/containers/MobilePage/index.js" />
+        <option value="$PROJECT_DIR$/temp/src/app/routing/index.js" />
+        <option value="$PROJECT_DIR$/temp/package.json" />
+        <option value="$PROJECT_DIR$/.babelrc" />
+        <option value="$PROJECT_DIR$/build/index.html" />
+        <option value="$PROJECT_DIR$/src/app/containers/Pages/index.js" />
+        <option value="$PROJECT_DIR$/src/app/containers/Pages/calendarpicker.scss" />
+        <option value="$PROJECT_DIR$/src/app/containers/NotFound/index.js" />
+        <option value="$PROJECT_DIR$/src/app/routing/router.js" />
+        <option value="$PROJECT_DIR$/src/app/layout/index.js" />
+        <option value="$PROJECT_DIR$/src/www/index.html" />
+        <option value="$PROJECT_DIR$/src/app/routing/routing.scss" />
+        <option value="$PROJECT_DIR$/src/app/app.js" />
+        <option value="$PROJECT_DIR$/webpack-dev-server.config.js" />
+        <option value="$PROJECT_DIR$/src/app/store/index.js" />
+        <option value="$PROJECT_DIR$/src/app/reducers/index.js" />
+        <option value="$PROJECT_DIR$/src/app/components/List/ListItemPeriods.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/app/components/List/MaterialsList.js" />
+        <option value="$PROJECT_DIR$/src/app/components/Add/EditBody.js" />
+        <option value="$PROJECT_DIR$/src/app/containers/Pages/DateTimeSelect.js" />
+        <option value="$PROJECT_DIR$/src/app/components/List/ListFooter.js" />
+        <option value="$PROJECT_DIR$/src/app/components/List/index.js" />
+        <option value="$PROJECT_DIR$/src/app/reducers/tasks.js" />
+        <option value="$PROJECT_DIR$/src/app/actions/index.js" />
+        <option value="$PROJECT_DIR$/src/app/css/main.less" />
+        <option value="$PROJECT_DIR$/src/app/routing/index.js" />
+        <option value="$PROJECT_DIR$/src/app/components/Add/index.js" />
+        <option value="$PROJECT_DIR$/src/app/components/ShowPage/show.scss" />
+        <option value="$PROJECT_DIR$/src/app/components/Update/index.js" />
+        <option value="$PROJECT_DIR$/src/app/components/List/ListItem.js" />
+        <option value="$PROJECT_DIR$/src/app/components/List/list.scss" />
+        <option value="$PROJECT_DIR$/src/app/components/ShowPage/index.js" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <annotation-enable>false</annotation-enable>
+    <other-services-enabled>true</other-services-enabled>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="98" />
+    <option name="y" value="21" />
+    <option name="width" value="1457" />
+    <option name="height" value="1059" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource ProjectPane="true" />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routing" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reducers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="containers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="containers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Update" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ShowPage" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="List" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Header" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Add" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actions" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bot.manager" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="build" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app.js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NestingTreeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="settings.editor.selected.configurable" value="Settings.JavaScript" />
+    <property name="last_opened_file_path" value="$USER_HOME$/study/react-redux-bookstore" />
+    <property name="JavaScriptPreferStrict" value="false" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="nodejs_interpreter_path" value="/usr/bin/node" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="ignore_missing_gitignore" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/app/components" />
+      <recent name="$PROJECT_DIR$/src/app/containers/Pages" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
+      <method />
+    </configuration>
+    <configuration default="true" type="DartTestRunConfigurationType" factoryName="Dart Test">
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerKarma" factoryName="Karma">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
+      <config-file value="" />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
+      <method />
+    </configuration>
+    <configuration default="true" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="project" working-dir="">
+      <method />
+    </configuration>
+    <configuration default="true" type="cucumber.js" factoryName="Cucumber.js">
+      <option name="cucumberJsArguments" value="" />
+      <option name="executablePath" />
+      <option name="filePath" />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run" />
+      <scripts />
+      <node-interpreter value="project" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory />
+      <pass-parent-env>true</pass-parent-env>
+      <envs />
+      <ui />
+      <extra-mocha-options />
+      <test-kind>DIRECTORY</test-kind>
+      <test-directory />
+      <recursive>false</recursive>
+      <method />
+    </configuration>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aab4f455-8df1-4516-8328-61b40e8beb56" name="Default" comment="" />
+      <created>1497728576109</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1497728576109</updated>
+      <workItem from="1497728577534" duration="13503000" />
+      <workItem from="1497742858410" duration="7469000" />
+      <workItem from="1498300487890" duration="25072000" />
+      <workItem from="1498912351812" duration="18776000" />
+      <workItem from="1498996227308" duration="43351000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="108171000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="98" y="21" width="1457" height="1059" extended-state="4" />
+    <layout>
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26698697" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2886812" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="processedProjectFiles" value="true" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="5" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/temp/build/index.html" />
+    <entry file="file://$PROJECT_DIR$/temp/webpack-dev-server.config.js" />
+    <entry file="file://$PROJECT_DIR$/temp/src/app/app.js" />
+    <entry file="file://$PROJECT_DIR$/temp/src/app/containers/MobilePage/index.js" />
+    <entry file="file://$PROJECT_DIR$/temp/package.json" />
+    <entry file="file://$PROJECT_DIR$/temp/src/app/routing/index.js" />
+    <entry file="file://$PROJECT_DIR$/build/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="8" lean-forward="false" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.babelrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="1" lean-forward="false" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/MobilePage/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="127" column="27" lean-forward="false" selection-start-line="127" selection-start-column="27" selection-end-line="127" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/rc-calendar/lib/locale/ru_RU.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9741">
+          <caret line="573" column="4" lean-forward="false" selection-start-line="573" selection-start-column="4" selection-end-line="573" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/Pages/calendarpicker.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="15" selection-end-line="1" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/npm-debug.log" />
+    <entry file="file://$PROJECT_DIR$/webpack.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-quill/dist/quill.bubble.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/MobilePage/EmailPage/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="904">
+          <caret line="169" column="6" lean-forward="false" selection-start-line="165" selection-start-column="2" selection-end-line="169" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Header/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/NotFound/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/routing/router.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/lodash/array.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="2" lean-forward="false" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/routing/routing.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="27" column="30" lean-forward="false" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/layout/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="41" column="26" lean-forward="false" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript6.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="631" column="9" lean-forward="false" selection-start-line="631" selection-start-column="9" selection-end-line="631" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/HomePage/InstantSearch.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/reducers/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="11" lean-forward="false" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="15" column="7" lean-forward="false" selection-start-line="15" selection-start-column="7" selection-end-line="15" selection-end-column="7" />
+          <folding>
+            <element signature="e#297#336#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/store/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="38" lean-forward="false" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="38" />
+          <folding>
+            <element signature="e#162#193#0" expanded="false" />
+            <element signature="e#267#290#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package-lock.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1498925334776" expanded="true" signature="176164:176331" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/style-loader/-/style-loader-0.17.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="176355:176506" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/supports-color/-/supports-color-3.2.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="176520:176651" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/svgo/-/svgo-0.7.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="176678:176835" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/symbol-observable/-/symbol-observable-1.0.4.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="176852:177008" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tapable/-/tapable-0.2.6.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177021:177169" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tar/-/tar-2.2.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177185:177320" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tether/-/tether-1.4.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177347:177523" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/timers-browserify/-/timers-browserify-2.0.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177547:177717" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177745:177923" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/to-fast-properties/-/to-fast-properties-1.0.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="177941:178099" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/toposort/-/toposort-1.0.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="178121:178268" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tough-cookie/-/tough-cookie-2.3.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="178301:178489" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/transfer-webpack-plugin/-/transfer-webpack-plugin-0.1.4.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="178512:178680" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/trim-newlines/-/trim-newlines-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="178700:178862" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/trim-right/-/trim-right-1.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="178886:179056" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tty-browserify/-/tty-browserify-0.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179078:179225" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tunnel-agent/-/tunnel-agent-0.6.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179244:179410" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/tweetnacl/-/tweetnacl-0.14.5.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179427:179565" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/type-is/-/type-is-1.6.15.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179585:179730" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography/-/typography-0.15.10.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179771:179958" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography-breakpoint-constants/-/typography-breakpoint-constants-0.15.10.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="179988:180152" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography-normalize/-/typography-normalize-0.14.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="180184:180353" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography-plugin-code/-/typography-plugin-code-0.15.11.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="180391:180572" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography-theme-fairy-gates/-/typography-theme-fairy-gates-0.15.11.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="180606:180779" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/typography-theme-lincoln/-/typography-theme-lincoln-0.15.11.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="180801:180949" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/ua-parser-js/-/ua-parser-js-0.7.12.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="180968:181349" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uglify-js/-/uglify-js-2.8.29.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="181147:181343" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="181166:181335" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/yargs/-/yargs-3.10.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="181379:181585" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uglify-to-browserify/-/uglify-to-browserify-1.0.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="181609:181760" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uncontrollable/-/uncontrollable-4.1.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="181787:181971" ph="{&quot;version&quot;: &quot;3.0.3&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182001:182191" ph="{&quot;version&quot;: &quot;1.0.4&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182183:182191" ph="{&quot;version&quot;: &quot;1.0.4&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182205:182336" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uniq/-/uniq-1.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182352:182487" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uniqid/-/uniqid-4.1.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182502:182635" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uniqs/-/uniqs-2.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182651:182786" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="182981:183358" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/url/-/url-0.11.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="183148:183352" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="183170:183344" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="183378:183780" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/url-loader/-/url-loader-0.5.8.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="183558:183774" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="183584:183766" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/loader-utils/-/loader-utils-1.1.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="183799:184205" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/url-parse/-/url-parse-1.1.9.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="183977:184199" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="184005:184191" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/querystringify/-/querystringify-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="184219:184598" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/util/-/util-0.10.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="184388:184592" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="184410:184584" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/inherits/-/inherits-2.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="184622:184773" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="184961:185106" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/utils-merge/-/utils-merge-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185120:185251" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/uuid/-/uuid-3.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185289:185487" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/validate-npm-package-license/-/validate-npm-package-license-3.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185508:185653" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/value-equal/-/value-equal-0.2.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185667:185798" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/vary/-/vary-1.1.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185815:185952" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/vendors/-/vendors-1.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="185968:186103" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/verror/-/verror-1.3.6.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186126:186294" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186307:186456" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/vow/-/vow-0.4.15.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186473:186610" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/warning/-/warning-3.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186629:186789" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/watchpack/-/watchpack-1.3.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186803:186953" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/wbuf/-/wbuf-1.7.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="186970:187801" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/webpack/-/webpack-2.6.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="187144:187795" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="187170:187353" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/loader-utils/-/loader-utils-0.2.17.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="187382:187570" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/source-list-map/-/source-list-map-1.1.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="187599:187787" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/webpack-sources/-/webpack-sources-0.2.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="187833:188020" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/webpack-dev-middleware/-/webpack-dev-middleware-1.10.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="188048:188226" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/webpack-dev-server/-/webpack-dev-server-2.4.5.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="188251:188672" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/webpack-sources/-/webpack-sources-1.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="188441:188666" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="188470:188658" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/source-list-map/-/source-list-map-2.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="188698:188872" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/websocket-driver/-/websocket-driver-0.6.5.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="188902:189084" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/websocket-extensions/-/websocket-extensions-0.1.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189106:189253" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/whatwg-fetch/-/whatwg-fetch-2.0.3.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189274:189419" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/whet.extend/-/whet.extend-0.9.9.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189434:189587" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/which/-/which-1.2.14.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189609:189775" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/which-module/-/which-module-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189795:189957" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/wide-align/-/wide-align-1.1.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="189978:190142" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/window-size/-/window-size-0.1.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="190160:190318" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/wordwrap/-/wordwrap-0.0.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="190337:190497" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-2.1.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="190513:190667" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/wrappy/-/wrappy-1.0.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="190693:190867" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/xml-char-classes/-/xml-char-classes-1.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="190882:191034" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/xtend/-/xtend-4.0.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="191048:191198" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/y18n/-/y18n-3.2.1.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="191215:191371" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/yallist/-/yallist-2.1.2.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="191386:191956" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/yargs/-/yargs-6.6.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="191556:191950" ph="{...}" />
+            <marker date="1498925334776" expanded="true" signature="191579:191755" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/camelcase/-/camelcase-3.0.0.tgz&quot;...}" />
+            <marker date="1498925334776" expanded="true" signature="191774:191942" ph="{&quot;version&quot;: &quot;https://registry.npmjs.org/cliui/-/cliui-3.2.0.tgz&quot;...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="935">
+          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webpack-dev-server.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="23" column="21" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/ListItemPeriods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="32" column="102500" lean-forward="true" selection-start-line="32" selection-start-column="102500" selection-end-line="32" selection-end-column="102500" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/MaterialsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="143" column="21" lean-forward="false" selection-start-line="143" selection-start-column="17" selection-end-line="143" selection-end-column="21" />
+          <folding>
+            <element signature="e#99#147#0" expanded="false" />
+            <element signature="e#640#675#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Add/EditBody.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-381">
+          <caret line="3" column="21" lean-forward="false" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#39#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="98" lean-forward="false" selection-start-line="3" selection-start-column="98" selection-end-line="3" selection-end-column="98" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/ListFooter.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="21" column="25" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="69" selection-end-column="71" />
+          <folding>
+            <element signature="e#352#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding>
+            <element signature="e#152#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/Pages/DateTimeSelect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="16" column="40" lean-forward="true" selection-start-line="16" selection-start-column="40" selection-end-line="16" selection-end-column="40" />
+          <folding>
+            <element signature="e#1733#1757#0" expanded="false" />
+            <element signature="e#1858#1887#0" expanded="false" />
+            <element signature="e#1993#2014#0" expanded="false" />
+            <element signature="e#6587#6589#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/reducers/tasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="109" column="0" lean-forward="true" selection-start-line="109" selection-start-column="0" selection-end-line="109" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/actions/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="122">
+          <caret line="109" column="21" lean-forward="false" selection-start-line="109" selection-start-column="21" selection-end-line="109" selection-end-column="21" />
+          <folding>
+            <element signature="e#29#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/containers/Pages/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="109" column="34" lean-forward="false" selection-start-line="109" selection-start-column="34" selection-end-line="109" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/css/main.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="505">
+          <caret line="127" column="1" lean-forward="false" selection-start-line="127" selection-start-column="1" selection-end-line="127" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/routing/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#2161#2218#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Add/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="215" column="21" lean-forward="false" selection-start-line="215" selection-start-column="21" selection-end-line="215" selection-end-column="21" />
+          <folding>
+            <element signature="e#954#994#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/Update/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="279" column="0" lean-forward="false" selection-start-line="279" selection-start-column="0" selection-end-line="279" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#956#978#0" expanded="true" />
+            <element signature="e#3773#3917#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/ListItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="205" column="53" lean-forward="false" selection-start-line="205" selection-start-column="53" selection-end-line="205" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#719#754#0" expanded="true" />
+            <marker date="1499594071330" expanded="true" signature="7102:7184" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/ShowPage/show.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="21" lean-forward="false" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/List/list.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/components/ShowPage/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="90" column="43" lean-forward="false" selection-start-line="90" selection-start-column="43" selection-end-line="90" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#345#404#0" expanded="true" />
+            <element signature="e#467#502#0" expanded="true" />
+            <element signature="e#602#622#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

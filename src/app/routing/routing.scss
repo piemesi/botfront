@@ -1,0 +1,31 @@
+
+@import "~react-quill/dist/quill.snow.css";
+@import "~react-quill/dist/quill.bubble.css";
+@import "~react-quill/dist/quill.core.css";
+.fade-enter {
+  opacity: 0;
+  z-index: 1;
+}
+
+
+
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 250ms ease-in;
+}
+
+.daysRenderItem > div{
+  max-width: 200px;
+  margin-left: 5px !important;
+}
+
+.daysRenderItem > div .ant-input{
+  max-width: 180px;
+}
+
+.daysRenderItem{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: center;
+}
