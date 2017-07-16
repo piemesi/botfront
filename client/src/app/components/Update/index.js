@@ -10,6 +10,9 @@ import  FA from 'react-fontawesome';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SaveBtn from 'material-ui/svg-icons/content/save';
+
+import { apiUrl } from '/config/config.json';
+
 //REDUX
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -193,7 +196,7 @@ class UpdatePage extends Component {
         console.log('reactQuillRef', this.reactQuillRef)
         console.log('reactQuillRef2', this.reactQuillRef.state.text)
 
-        fetch("http://telegram.b:84/get_posts", {method: 'get'}).then((response) => {
+        fetch(`${apiUrl}/get_posts`, {method: 'get'}).then((response) => {
             response.json().then((jsonReponse) => {
                 if (jsonReponse.success) {
                     self.props.onTodoStore(jsonReponse.todo); // call onTodoStore

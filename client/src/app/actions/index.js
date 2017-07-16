@@ -6,6 +6,8 @@ import axios from 'axios'
 import cors from 'cors'
 import _ from 'lodash'
 
+import { apiUrl } from '/config/config.json';
+
 export const addNewUser = () => {
     // const username = `@${faker.internet.userName().toLowerCase()}`
     return dispatch => {
@@ -42,7 +44,7 @@ export const updateMaterial = (data, materialId, noStart = false) => {
 
     console.log('START222', data)
 
-    let url = "http://telegram.b:84/updatedata/"+materialId
+    let url = apiUrl+"/updatedata/"+materialId
     console.log('START222', url)
     // var materialData = _.toArray(data);
     let bodyData = new FormData();
@@ -111,7 +113,7 @@ export const increasePostShows = (hash) => {
 
 
 
-    let url = `http://telegram.b:84/post/${hash}/show/increase`
+    let url = `${apiUrl}/post/${hash}/show/increase`
     console.log('START222', url)
 
     return (dispatch) => {
@@ -140,7 +142,7 @@ export const getPost = (hash) => {
 
 
 
-    let url = `http://telegram.b:84/get_post/`+ hash
+    let url = `${apiUrl}/get_post/`+ hash
     console.log('START222', url)
 
     return (dispatch) => {
@@ -180,7 +182,7 @@ export const getPostsForChannel = (data, actType = 0) => {
         type:'GET_POSTS_UNSENT'
     } ]
 
-    let url = `http://telegram.b:84/${listRoutes[actType].link}/`+ data
+    let url = `${apiUrl}/${listRoutes[actType].link}/`+ data
     console.log('START222', url)
 
     return (dispatch) => {
@@ -206,7 +208,7 @@ export const getPostsForChannel = (data, actType = 0) => {
 };
 
 
-// let promis = axios.get("http://telegram.b:84/get_posts/1" ); //, , mode:'no-cors'}
+// let promis = axios.get(`${apiUrl}/get_posts/1` ); //, , mode:'no-cors'}
 //  if(response.status == 200){
 
 
