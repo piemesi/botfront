@@ -6,7 +6,7 @@ import axios from 'axios'
 import cors from 'cors'
 import _ from 'lodash'
 
-import { apiUrl } from '/config/config.json';
+import { apiUrl } from '../../../config/config.json';
 
 export const addNewUser = () => {
     // const username = `@${faker.internet.userName().toLowerCase()}`

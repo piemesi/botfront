@@ -11,7 +11,7 @@ import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import SaveBtn from 'material-ui/svg-icons/content/save';
 
-import { apiUrl } from '/config/config.json';
+import { apiUrl } from '../../../../config/config.json';
 
 //REDUX
 import {connect} from 'react-redux'

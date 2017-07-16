@@ -12,7 +12,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import SaveBtn from 'material-ui/svg-icons/content/save';
 
 
-import { apiUrl } from '/config/config.json';
+import { apiUrl } from '../../../../config/config.json';
 //REDUX
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
