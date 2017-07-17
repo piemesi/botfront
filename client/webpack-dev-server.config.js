@@ -1,7 +1,14 @@
 const webpack = require('webpack');
 const path = require('path');
 // const TransferWebpackPlugin = require('transfer-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const fs = require('fs');
+const gracefulFs = require('graceful-fs');
+gracefulFs.gracefulify(fs);
 
+// const UglifyJS = require("uglify-es");
+const BabiliPlugin = require("babili-webpack-plugin");
+const babiliOptions = {}
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const extractPlugin = new ExtractTextPlugin({
@@ -27,7 +34,7 @@ const config = {
         host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
         historyApiFallback: true,
     },
-    devtool: 'eval', // '#cheap-module-source-map', eval
+    devtool: 'cheap-module-source-map', // '#cheap-module-source-map', eval
     output: {
         path: path.resolve(__dirname, 'build'), // Path of output file
         filename: 'app.js',
@@ -39,6 +46,9 @@ const config = {
         // new TransferWebpackPlugin([
         //     {from: 'www' },
         // ], path.resolve(__dirname, 'src')),
+        new CopyWebpackPlugin([
+            // {output}/file.txt
+            { from: 'src/www' }]),
         extractPlugin
     ],
     resolve: {

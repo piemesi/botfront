@@ -312,7 +312,7 @@ class AddPage extends Component {
                        rowsMax={6}
             />
             <div style={{display: 'flex', justifyContent: 'space-around',
-                alignItems: 'baseline'}}>
+                alignItems: 'baseline'}} className="bottom-add-space">
                 <div style={style.flexDivStyle}>
                     <div className="datesInputs">
                         {this.state.daysRender.map((d) => d)}
@@ -332,6 +332,7 @@ class AddPage extends Component {
                     onChange={this._handleTextFieldMinutesToReadChange.bind()}
                     value={this.state.minutesToRead}
                     underlineStyle={styles.underlineStyle}
+                   className="time-to-read"
                 />
 
                 <Toggle
@@ -340,6 +341,7 @@ class AddPage extends Component {
                     onToggle={this.handleChange}
                     labelPosition="right"
                     style={{marginLeft: 20, maxWidth:'300px', fontSize:'16px'}}
+                    className="preview-link"
                 />
             </div>
             <RaisedButton label="Save" onClick={this.saveData.bind(this)} rippleStyle={{
@@ -353,7 +355,9 @@ class AddPage extends Component {
                               color: colors.white,
                               marginBottom: 10
                           }}
-                          primary={true} icon={<SaveBtn/>}/>
+                          primary={true} icon={<SaveBtn/>}
+                          className="add-post-timer"
+            />
 
         </div> )
     }

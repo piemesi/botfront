@@ -11,8 +11,7 @@ import {
 const Public = () => <h3>Посадочная страница</h3>
 const Protected = (props) => {
 
-    console.log('props',props)
-
+    console.log('props', props)
 
 
     let menu = <ul style={styles.nav}>
@@ -31,45 +30,27 @@ const Protected = (props) => {
     }
 
 
+    return <div style={styles.fill}>
 
-    // <Route render={({location, match}) => (
-
-    // )}/>
-
+        {menu}
 
 
+        <div style={contentStyle}>
+            <CSSTransitionGroup
+                transitionName="fade"
+                transitionEnterTimeout={300}
+                transitionLeaveTimeout={300}
+            >
 
-
-   return  <div style={styles.fill}>
-       {/*<Route exact path="*" render={() => (*/}
-       {/*<Redirect to="/add/90/50"/>*/}
-       {/*)}/>*/}
-       {/*{console.log('MATCHES', match)}*/}
-       {/*{console.log('location', location)}*/}
-       {menu}
-
-
-       <div style={contentStyle}>
-           <CSSTransitionGroup
-               transitionName="fade"
-               transitionEnterTimeout={300}
-               transitionLeaveTimeout={300}
-           >
-               {/* no different than other usage of
-                CSSTransitionGroup, just make
-                sure to pass `location` to `Route`
-                so it can match the old location
-                as it animates out
-                */}
-               <Route
-                   location={location}
-                   key={location.key}
-                   path="/:h/:s/:l"
-                   component={HSL}
-               />
-           </CSSTransitionGroup>
-       </div>
-   </div>
+                <Route
+                    location={location}
+                    key={location.key}
+                    path="/:h/:s/:l"
+                    component={HSL}
+                />
+            </CSSTransitionGroup>
+        </div>
+    </div>
 }
 
 const fakeAuth = {
@@ -92,14 +73,15 @@ const AuthButton = withRouter(({history}) => (
             <button onClick={() => {
                 fakeAuth.signout(() => history.push('/'))
             }}>Sign out
-            </button><br/>
-            <Link onlyActiveOnIndex={true}  to="/add/1/2">Перейти к управлению аккаунтом
+            </button>
+            <br/>
+            <Link onlyActiveOnIndex={true} to="/add/1/2">Перейти к управлению аккаунтом
             </Link>
         </p>
     ) : (
-       <div> <h2>Сервис управления каналами Telegram</h2>
-        {/*<p>Удобно и бесплатно</p>*/}
-           <span><em>Публичный доступ с августа 2017</em></span></div>
+        <div><h2>Сервис управления каналами Telegram </h2>
+            <p style={{color:colors.grey600}}>Для владельцев каналов и SMM-менеджеров</p>
+            <span><em>Публичный доступ с августа 2017</em></span></div>
     )
 ))
 
@@ -149,39 +131,7 @@ const PrivateRoute = ({component: Component, ...rest}) => (
 
 
 
-//     <Route render={({location, match}) => (
-//     <div style={styles.fill}>
-//         {/*<Route exact path="*" render={() => (*/}
-//         {/*<Redirect to="/add/90/50"/>*/}
-//         {/*)}/>*/}
-//         {/*{console.log('MATCHES', match)}*/}
-//         {/*{console.log('location', location)}*/}
-//         {menu}
-//
-//
-//         <div style={contentStyle}>
-//             <CSSTransitionGroup
-//                 transitionName="fade"
-//                 transitionEnterTimeout={300}
-//                 transitionLeaveTimeout={300}
-//             >
-//                 {/* no different than other usage of
-//                  CSSTransitionGroup, just make
-//                  sure to pass `location` to `Route`
-//                  so it can match the old location
-//                  as it animates out
-//                  */}
-//                 <Route
-//                     location={location}
-//                     key={location.key}
-//                     path="/:h/:s/:l"
-//                     component={HSL}
-//                 />
-//             </CSSTransitionGroup>
-//         </div>
-//     </div>
-// )}/>
-//
+
 
 
 )
@@ -189,27 +139,11 @@ const PrivateRoute = ({component: Component, ...rest}) => (
 const AnimationExample = () => {
 
 
-    let menu = <ul style={styles.nav}>
-        <NavLink to="/add/100/40">Add</NavLink>
-        <NavLink to="/list/100/35">List</NavLink>
-        <NavLink to="/calendar/100/30">Calendar</NavLink>
-        <NavLink to="/channel/100/25">Channels</NavLink>
-    </ul>
-
-    let contentStyle = styles.content
-
-    if (location.pathname.indexOf('show') !== -1) {
-        menu = <header style={styles.navInside}>UTS Company channel</header>
-        contentStyle = styles.contentInside
-
-    }
-
-
     return (<Router>
 
-        <div style={{display:'flex', flexDirection:'column',justifyContent:'flex-start'}}>
+        <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
             <AuthButton/>
-            <ul style={{display:'none', backgroundColor:'#fd9'}}>
+            <ul style={{display: 'none', backgroundColor: '#fd9'}}>
                 <li><Link to="/public">Public Page</Link></li>
                 <li><Link to="/protected">Protected Page</Link></li>
             </ul>
@@ -245,11 +179,7 @@ import ListPage from '../components/List'
 
 
 const muiTheme = getMuiTheme({
-    // palette: {
-    //     accent1Color: deepOrange500,
-    //     textColor: cyan500,
-    //
-    // },
+
     palette: {
         // accent1Color: colors.deepOrange500,
         // primary1Color: colors.purple500, //cyan500,
@@ -271,7 +201,7 @@ const muiTheme = getMuiTheme({
 
 
 import ShowPage from '../components/ShowPage'
-
+import Paper from 'material-ui/Paper';
 class Page extends Component {
 
 
@@ -304,12 +234,16 @@ class Page extends Component {
 
 
         return (
-            <div style={{overflow: "auto", height: "100%"}}>
+            <div style={{overflow: "auto", height: "100%", display: 'flex', justifyContent: 'center'}}>
                 <MuiThemeProvider muiTheme={muiTheme}>
-                    <div className="page-wrap" style={{width: "100%", fontFamily: "'Roboto', sans-serif"}}>
-                        {/*{this.renderPage()}*/}
+                    <div className="page-wrap"
+                         style={{width: "100%", maxWidth: '800px', fontFamily: "'Roboto', sans-serif"}}>
+                        <h2 style={{fontSize: '30px', color: 'rgb(0, 188, 212)'}}>{titles[this.props.page] || ''}</h2>
+                        {this.props.page === 'add' ? (
+                            <Paper style={{padding: "20px"}} zDepth={2}>
+                                {this.state.renderPage[this.props.page] || this.state.renderPage['add']}
+                            </Paper>) : this.state.renderPage[this.props.page] || <p style={{fontSize:'18px', color:colors.grey600}}>Доступно владельцам подписки</p>}
 
-                        {this.state.renderPage[this.props.page] || this.state.renderPage['add']}
 
                     </div>
 
@@ -325,7 +259,7 @@ class Page extends Component {
 
 const titles = {
     add: 'Добавить материал',
-    list: '',//'Список материалов',
+    list: 'Список материалов',//'Список материалов',
     calendar: 'Календарь',
     channel: 'Каналы',
 }
@@ -339,8 +273,6 @@ const HSL = ({match: {params}}) => {
         // background: `hsl(${params.s}, ${params.s}%, ${params.l}%)`
     }}>
 
-
-        {titles[params.h]}
 
         <Page page={params.h} channelId={params.s} postHash={params.l}/>
 
