@@ -1,16 +1,13 @@
 import { combineReducers } from 'redux'
-import tasksReducer from './tasks'
-// import countriesReducer from './countries'
-// import mapReducer from './map'
-// import searchReducer from './search'
-// import footerReducer from './footer'
+import tasksReducer from './tasks';
+import channelReducer from './channels';
+
 
 const myReducer = combineReducers({
-    // footerReducer,
+
     tasksReducer,
-    // searchReducer,
-    // countriesReducer,
-    // mapReducer
+    channelReducer,
+
 });
 
 export default myReducer

@@ -30,7 +30,7 @@ const config = {
         contentBase: 'src/www', // Relative directory for base of server
         hot: true, // Live-reload
         inline: true,
-        port: 3009, // Port Number
+        port: 3011, // Port Number
         host: '0.0.0.0', // Change to '0.0.0.0' for external facing server
         historyApiFallback: true,
     },

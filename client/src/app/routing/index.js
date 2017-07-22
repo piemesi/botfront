@@ -11,8 +11,6 @@ import {
 const Public = () => <h3>Посадочная страница</h3>
 const Protected = (props) => {
 
-    console.log('props', props)
-
 
     let menu = <ul style={styles.nav}>
         <NavLink to="/add/100/40">Add</NavLink>
@@ -81,7 +79,7 @@ const AuthButton = withRouter(({history}) => (
     ) : (
         <div><h2>Сервис управления каналами Telegram </h2>
             <p style={{color:colors.grey600}}>Для владельцев каналов и SMM-менеджеров</p>
-            <span><em>Публичный доступ с августа 2017</em></span></div>
+            <span><em>Публичный доступ: осень 2017</em></span></div>
     )
 ))
 
@@ -176,7 +174,7 @@ import './routing.scss'
 
 import AddPage from '../components/Add'
 import ListPage from '../components/List'
-
+import ChannelPage from '../components/Channel'
 
 const muiTheme = getMuiTheme({
 
@@ -187,6 +185,7 @@ const muiTheme = getMuiTheme({
         // primary3Color: colors.grey400,
         // // accent1Color: pinkA200,
         // accent2Color: colors.grey100,
+        alertColor: '#ccc',
         // accent3Color: colors.grey500,
         // textColor: colors.darkBlack,
         // alternateTextColor: colors.white,
@@ -211,7 +210,8 @@ class Page extends Component {
 
         let rP = {
             'add': <AddPage />,
-            'list': <ListPage channelId={1}/>,
+            'list': <ListPage />,
+            channel: <ChannelPage companyId={1} />,
             show: <ShowPage postHash={this.props.postHash}/>
         };
 
@@ -239,7 +239,7 @@ class Page extends Component {
                     <div className="page-wrap"
                          style={{width: "100%", maxWidth: '800px', fontFamily: "'Roboto', sans-serif"}}>
                         <h2 style={{fontSize: '30px', color: 'rgb(0, 188, 212)'}}>{titles[this.props.page] || ''}</h2>
-                        {this.props.page === 'add' ? (
+                        {this.props.page === 'add' || this.props.page === 'channel' ? (
                             <Paper style={{padding: "20px"}} zDepth={2}>
                                 {this.state.renderPage[this.props.page] || this.state.renderPage['add']}
                             </Paper>) : this.state.renderPage[this.props.page] || <p style={{fontSize:'18px', color:colors.grey600}}>Доступно владельцам подписки</p>}

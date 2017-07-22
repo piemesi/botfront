@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import Paper from 'material-ui/Paper';
 import Drawer from 'material-ui/Drawer';
 
 import muiThemeable from 'material-ui/styles/muiThemeable';
@@ -31,16 +31,20 @@ class Materials extends Component {
     }
     handleDrawerToggle = () => this.setState({open: !this.state.open});
     componentWillMount() {
-        let promis = this.props.getPostsForChannel(this.props.channelId);
+        if(this.props.channels.current)
+        {
+            let promis = this.props.getPostsForChannel(this.props.channels.current);
 
-        setTimeout(() => {
-            console.log('data', this.props.tasks)
+            promis.then(() => {
+                console.log('data', this.props.tasks)
 
-            this.setState({
-                tasksList:this.props.tasks
+                this.setState({
+                    tasksList:this.props.tasks
+                })
+
             })
+        }
 
-        }, 550)
 
 
 
@@ -68,32 +72,33 @@ class Materials extends Component {
          let listItems = this.props.focused ? [this.state.tasksList[this.props.focused]] : this.state.tasksList
 
           listItems = this.props.upd ? this.props.tasks : listItems
-        console.log('PROPS focused', this.props.focused )
 
-        console.log('PROPS upd', this.props.upd )
 
+
+        let page = this.props.channels.current  ? (<div> <AppBar
+            style={{backgroundColor:this.props.muiTheme.palette.primary3Color}}
+            onLeftIconButtonTouchTap={this.handleDrawerToggle}
+            title="Полный список статей"
+        /><Drawer width={300} openSecondary={true} open={this.state.open} >
+            <MaterialsList materials={this.state.tasksList} />
+        </Drawer>
+            {listItems.map((m) => {
+
+                // let arr =
+                console.log('PROPS focused2', this.props.focused)
+
+
+                return  <ListItem  material={m}/>
+            }) } <ListFooter /></div> ) : <Paper style={{fontSize:'25px',lineHeight:'30px', padding:'50px',color:this.props.muiTheme.palette.alertColor}} ><span>Для отображения списка постов - выберите канал</span></Paper>;
 
         return (
             <div style={{textAlign:'left'}}>
-                 <AppBar
-                    style={{backgroundColor:this.props.muiTheme.palette.primary3Color}}
-                    onLeftIconButtonTouchTap={this.handleDrawerToggle}
-                    title="Полный список статей"
-                />
-                <Drawer width={300} openSecondary={true} open={this.state.open} >
-                    <MaterialsList materials={this.state.tasksList} />
-                </Drawer>
-                {listItems.map((m) => {
-
-                    // let arr =
-                  console.log('PROPS focused2', this.props.focused)
 
 
-                    return  <ListItem  material={m}/>
-                })}
+
+                {page}
 
 
-                <ListFooter />
 
             </div>
         );
@@ -106,6 +111,8 @@ function mapStateToProps(state) {
         tasks: state.tasksReducer.tasks,
         upd: state.tasksReducer.upd || null,
         focused: state.tasksReducer.focused || null,
+        channels: state.channelReducer,
+
     }
 }
 

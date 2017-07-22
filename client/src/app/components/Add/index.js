@@ -188,18 +188,15 @@ class AddPage extends Component {
 
         // fetch(API_URL+"/todos/store", {
 
-        console.log('reactQuillRef', this.reactQuillRef)
-        console.log('reactQuillRef2', this.reactQuillRef.state.text)
 
-        // fetch(`${apiUrl}/get_posts`, {method: 'get'}).then((response) => {
-        //     response.json().then((jsonReponse) => {
-        //         if (jsonReponse.success) {
-        //             self.props.onTodoStore(jsonReponse.todo); // call onTodoStore
-        //             self.setState({body: ''}); // empty our text input
-        //             this.setState({working: false});
-        //         }
-        //     })
-        // });
+        if(!this.props.channels.current){
+            this.setState({
+                headerErr: 'Please choose channel in `channels`'
+            })
+            return false;
+        }
+
+
 
 
         if (this.state.header.length < 2) {
@@ -228,7 +225,7 @@ class AddPage extends Component {
         bodyData.append("title", data.header);
         bodyData.append("text", this.reactQuillRef.state.text);
         bodyData.append("minutes_to_read", data.minutesToRead || 0);
-        bodyData.append("preview", data.preview);
+        bodyData.append("preview", data.preview || null);
         bodyData.append("need_link", this.state.need_link);
 
         console.log("DATES are:", this.dates)
@@ -256,7 +253,9 @@ class AddPage extends Component {
 
         console.log('data', bodyData);
 
-        fetch(`${apiUrl}/savedata`, {
+        let u = '/' + this.props.channels.current;
+
+        fetch(`${apiUrl}/savedata${u}`, {
             // headers: {
             //     'Accept': 'application/json',
             //     'Content-Type': 'application/json',
@@ -368,7 +367,7 @@ class AddPage extends Component {
 function mapStateToProps(state) {
     return {
         tasks: state.tasksReducer.tasks,
-
+        channels: state.channelReducer,
     }
 }
 

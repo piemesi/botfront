@@ -45,8 +45,6 @@ export const updateMaterial = (data, materialId, noStart = false) => {
     console.log('START222', data)
 
     let url = apiUrl+"/updatedata/"+materialId
-    console.log('START222', url)
-    // var materialData = _.toArray(data);
     let bodyData = new FormData();
 
 
@@ -111,10 +109,7 @@ export const updateMaterial = (data, materialId, noStart = false) => {
 
 export const increasePostShows = (hash) => {
 
-
-
     let url = `${apiUrl}/post/${hash}/show/increase`
-    console.log('START222', url)
 
     return (dispatch) => {
         dispatch({
@@ -140,10 +135,7 @@ export const increasePostShows = (hash) => {
 
 export const getPost = (hash) => {
 
-
-
     let url = `${apiUrl}/get_post/`+ hash
-    console.log('START222', url)
 
     return (dispatch) => {
         dispatch({
@@ -169,7 +161,7 @@ export const getPost = (hash) => {
 
 export const getPostsForChannel = (data, actType = 0) => {
 
-    console.log('START222', data)
+
 
     let listRoutes = [{
         link:'get_posts',
@@ -183,10 +175,8 @@ export const getPostsForChannel = (data, actType = 0) => {
     } ]
 
     let url = `${apiUrl}/${listRoutes[actType].link}/`+ data
-    console.log('START222', url)
 
-    return (dispatch) => {
-        dispatch({
+    return  {
             type: listRoutes[actType].type,
             payload: fetch(url)
                 .then(response => {
@@ -203,7 +193,7 @@ export const getPostsForChannel = (data, actType = 0) => {
                 .then(json => {
                     return Promise.resolve(json)
                 })
-        })
+
     };
 };
 
@@ -253,5 +243,39 @@ export const selectCountries = (selected) => {
     return {
         type: 'SELECT_COUNTRIES',
         selected
+    }
+};
+
+export const getChannels = (companyId) => {
+
+    let url = `${apiUrl}/get_channels/`+ companyId
+
+    return  {
+
+            type: `GET_CHANNELS`,
+            payload: fetch(url)
+                .then(response => {
+                    console.log('START response', response)
+                    if( response.ok ) {
+                        let resp = response.json()
+                        console.log('START resp', resp)
+                        return resp
+                    }
+                    else {
+                        return Promise.reject();
+                    }
+                })
+                .then(json => {
+                    return Promise.resolve(json)
+                })
+
+    };
+};
+
+export const setCurrentChannel = (current) => {
+
+    return {
+        type: 'SET_CURRENT_CHANNEL',
+        current
     }
 };
