@@ -12,7 +12,7 @@ import ContentAdd from 'material-ui/svg-icons/content/add';
 import SaveBtn from 'material-ui/svg-icons/content/save';
 
 
-import { apiUrl } from '../../../../config/config.json';
+import {apiUrl} from '../../../../config/config.json';
 //REDUX
 import {connect} from 'react-redux'
 import {bindActionCreators} from 'redux'
@@ -33,6 +33,11 @@ const style = {
 
     }
 }
+
+import ChoosenSnackbar from '../Channel/choosenChannelInfo';
+import CircularProgress from 'material-ui/CircularProgress';
+
+
 import Toggle from 'material-ui/Toggle';
 
 
@@ -40,7 +45,6 @@ import _ from 'lodash'
 
 
 import EditBody from './EditBody'
-
 
 
 import IconButton from 'material-ui/IconButton';
@@ -68,8 +72,9 @@ class AddPage extends Component {
             data: null,
             days: null,
             daysArrRender: null,
-            minutesToRead: null,
-            need_link: false
+            minutesToRead: 0,
+            need_link: false,
+            isPending: false
 
         };
 
@@ -89,7 +94,7 @@ class AddPage extends Component {
             this.makeDaysItem(keyK, itemK))
 
         daysArrRender.push(
-            <div className="daysRenderItem">
+            <div key={"dr_"+keyK} className="daysRenderItem">
                 {this.makeDaysItem(keyK, itemK)}
                 {this.makeIconDaysDeleteBtn(itemK)}
             </div>
@@ -135,7 +140,7 @@ class AddPage extends Component {
         ];
 
         let daysRender = [
-            <div className="daysRenderItem">
+            <div key="dr_0" className="daysRenderItem">
                 <DateTimePicker key="periods_0" ref={(r) => this.dates[0] = r}
                                 style={{width: '200px', 'margin': '5px'}}
 
@@ -144,7 +149,7 @@ class AddPage extends Component {
                     <ContentRemove />
                 </IconButton>
             </div>
-        ]
+        ];
 
         this.setState({
             days,
@@ -189,14 +194,12 @@ class AddPage extends Component {
         // fetch(API_URL+"/todos/store", {
 
 
-        if(!this.props.channels.current){
+        if (!this.props.channels.current) {
             this.setState({
                 headerErr: 'Please choose channel in `channels`'
             })
             return false;
         }
-
-
 
 
         if (this.state.header.length < 2) {
@@ -251,9 +254,13 @@ class AddPage extends Component {
         bodyData.append("text", this.reactQuillRef.state.text);
         bodyData.append("dates", dates);
 
-        console.log('data', bodyData);
+        // console.log('data', bodyData);
 
         let u = '/' + this.props.channels.current;
+
+        this.setState({
+            isPending: <CircularProgress size={60} thickness={7}/>
+        });
 
         fetch(`${apiUrl}/savedata${u}`, {
             // headers: {
@@ -271,10 +278,27 @@ class AddPage extends Component {
         }).then((response) => {
             response.json().then((jsonReponse) => {
                 if (jsonReponse.success) {
-                    self.props.onTodoStore(jsonReponse.todo); // call onTodoStore
-                    self.setState({body: ''}); // empty our text input
-                    this.setState({working: false});
+                    this.setState({
+                        isPending: <div style={{color: colors.green800}}>Пост успешно сохранен!</div>
+                    });
+
+                    setTimeout(()=>{
+                        this.setState({
+                            isPending: false
+                        });
+                    },2000)
+
+                    // self.props.onTodoStore(jsonReponse.todo); // call onTodoStore
+                    // self.setState({body: ''}); // empty our text input
+                 }else{
+                    this.setState({
+                        isPending: 'Ошибка при сохранении. Напишите боту в поддержку вот это: ссылка_на_лог_ошибки' //@toDO
+                    });
                 }
+            }).catch(err=>{
+                this.setState({
+                    isPending: err
+                });
             })
         });
     }
@@ -286,79 +310,86 @@ class AddPage extends Component {
     }
 
     render() {
-        return ( <div>
-            <TextField key="headerkey"
-                       hintText="Заголовок"
-                       fullWidth={true}
-                       onChange={this._handleTextFieldChange.bind()}
-                       value={this.state.header || ''}
-                       errorText={this.state.headerErr || ''}
 
-            />
+        let output = this.state.isPending || <div>
+                <TextField key="headerkey"
+                           hintText="Заголовок"
+                           fullWidth={true}
+                           onChange={this._handleTextFieldChange.bind()}
+                           value={this.state.header || ''}
+                           errorText={this.state.headerErr || ''}
 
-            <EditBody ref={(el) => {
-                this.reactQuillRef = el
-            }}
-            />
-            <TextField key="previewkey"
-                       hintText="preview of the post (обычно с ссылко на весь материал)"
-                       multiLine={true}
-                       fullWidth={true}
-                       style={{display:this.state.need_link ? 'block' : 'none'}}
-                       onChange={this._handleTextFieldPreviewChange.bind()}
-                       value={this.state.preview || ''}
-                       rows={2}
-                       rowsMax={6}
-            />
-            <div style={{display: 'flex', justifyContent: 'space-around',
-                alignItems: 'baseline'}} className="bottom-add-space">
-                <div style={style.flexDivStyle}>
-                    <div className="datesInputs">
-                        {this.state.daysRender.map((d) => d)}
+                />
+
+                <EditBody ref={(el) => {
+                    this.reactQuillRef = el
+                }}
+                />
+                <TextField key="previewkey"
+                           hintText="preview of the post (обычно с ссылко на весь материал)"
+                           multiLine={true}
+                           fullWidth={true}
+                           style={{display: this.state.need_link ? 'block' : 'none'}}
+                           onChange={this._handleTextFieldPreviewChange.bind()}
+                           value={this.state.preview || ''}
+                           rows={2}
+                           rowsMax={6}
+                />
+                <div style={{
+                    display: 'flex', justifyContent: 'space-around',
+                    alignItems: 'baseline'
+                }} className="bottom-add-space">
+                    <div style={style.flexDivStyle}>
+                        <div className="datesInputs">
+                            {this.state.daysRender.map((d) => d)}
+                        </div>
+                        <FloatingActionButton mini={true} style={style.btnAdd}
+                                              onClick={this.addPeriod}
+                        >
+                            <ContentAdd />
+                        </FloatingActionButton>
+
+
                     </div>
-                    <FloatingActionButton mini={true} style={style.btnAdd}
-                                          onClick={this.addPeriod}
-                    >
-                        <ContentAdd />
-                    </FloatingActionButton>
 
+                    <TextField
+                        key="minuteskey"
+                        hintText="Время прочтения поста "
+                        onChange={this._handleTextFieldMinutesToReadChange.bind()}
+                        value={this.state.minutesToRead}
+                        underlineStyle={styles.underlineStyle}
+                        className="time-to-read"
+                    />
 
+                    <Toggle
+                        label="Превью и ссылка на пост"
+                        defaultToggled={false}
+                        onToggle={this.handleChange}
+                        labelPosition="right"
+                        style={{marginLeft: 20, maxWidth: '300px', fontSize: '16px'}}
+                        className="preview-link"
+                    />
                 </div>
-
-                <TextField
-                    key="minuteskey"
-                    hintText="Время прочтения поста "
-                    onChange={this._handleTextFieldMinutesToReadChange.bind()}
-                    value={this.state.minutesToRead}
-                    underlineStyle={styles.underlineStyle}
-                   className="time-to-read"
+                <RaisedButton label="Save" onClick={this.saveData.bind(this)} rippleStyle={{
+                    color: this.props.muiTheme.palette.primary1Color,
+                    backgroundColor: this.props.muiTheme.palette.canvasColor
+                }}
+                              fullWidth={true}
+                    // overlayStyle={{marginBottom: 10}}
+                              style={{
+                                  backgroundColor: this.props.muiTheme.palette.canvasColor,
+                                  color: colors.white,
+                                  marginBottom: 10
+                              }}
+                              primary={true} icon={<SaveBtn/>}
+                              className="add-post-timer"
                 />
 
-                <Toggle
-                    label="Превью и ссылка на пост"
-                    defaultToggled={false}
-                    onToggle={this.handleChange}
-                    labelPosition="right"
-                    style={{marginLeft: 20, maxWidth:'300px', fontSize:'16px'}}
-                    className="preview-link"
-                />
-            </div>
-            <RaisedButton label="Save" onClick={this.saveData.bind(this)} rippleStyle={{
-                color: this.props.muiTheme.palette.primary1Color,
-                backgroundColor: this.props.muiTheme.palette.canvasColor
-            }}
-                          fullWidth={true}
-                // overlayStyle={{marginBottom: 10}}
-                          style={{
-                              backgroundColor: this.props.muiTheme.palette.canvasColor,
-                              color: colors.white,
-                              marginBottom: 10
-                          }}
-                          primary={true} icon={<SaveBtn/>}
-                          className="add-post-timer"
-            />
 
-        </div> )
+<ChoosenSnackbar noClose={true} />
+            </div>;
+
+        return output;
     }
 
 }

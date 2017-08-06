@@ -66,14 +66,14 @@ class ListItem extends Component {
     };
 
     handleActiveToggle = (event, toggle) => {
-        console.log('TOGGLE IS ', toggle)
+
         let material = {...this.props.material, active: toggle};
         this.props.updateMaterial(material, this.props.material.id)
         // this.setState({active: toggle});
     };
 
     handleDeleteToggle = (event, toggle) => {
-        console.log('TOGGLE IS ', toggle)
+
         let material = {...this.props.material, hide: toggle};
         this.props.updateMaterial(material, this.props.material.id)
         // this.setState({active: toggle});
@@ -114,7 +114,7 @@ class ListItem extends Component {
         let htmlToReactParser = new Parser();
         let preparedText = htmlToReactParser.parse(htmlInput);
         return (
-            <Card key={material.id} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+            <Card style={material.sent ? {...{},backgroundColor:'#ccc'} :{} } key={material.id} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
                 <CardHeader
                     title={material.title}
                     subtitle={"создано: " + material.created_at}

@@ -46,6 +46,7 @@
   "dependencies": {
     "airbnb-prop-types": "^2.6.0",
     "axios": "^0.16.1",
+    "base-64": "^0.1.0",
     "body-parser": "^1.17.1",
     "classnames": "^2.2.5",
     "cors": "^2.8.4",

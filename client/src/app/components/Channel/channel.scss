@@ -4,3 +4,22 @@
   justify-content: space-between;
 
 }
+
+.StepperBlock{
+  font-size: 12px;
+  text-align: left;
+  color:#616161;
+  .StepperDiv{
+    .note{
+      font-weight: bold;
+      font-size: 12px;
+      margin: 30px 0px 0px 0px;
+      cursor: pointer;
+    }
+    .sense{
+      color: #000;
+      font-size: 14px;
+
+    }
+  }
+}

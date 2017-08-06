@@ -54,6 +54,8 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import AddIcon from 'material-ui/svg-icons/content/add';
 import Divider from 'material-ui/Divider';
 
+import Stepper from './confirmStepper';
+
 class ChannelPage extends Component {
 
     constructor(props) {
@@ -62,6 +64,7 @@ class ChannelPage extends Component {
         this.dates = [];
         this.periodsLast = 0;
         this.state = {
+            stepperOn: false,
             title: '',
             telegramId: '',
             managerId: '',
@@ -69,7 +72,7 @@ class ChannelPage extends Component {
             telegramIdErr: '',
             managerIdErr: '',
             data: null,
-            open: false,
+            open: parseInt(this.props.postHash) === 0,
             currentChannelId: this.props.channels.current,
             list: []
 
@@ -86,9 +89,7 @@ class ChannelPage extends Component {
             let {list, current = null} = this.props.channels;
 
 
-
-
-            let {title, manager_account: manager_id, telegram_id} = list.length ? current ? _.find(list,{id:current}) : list[0] : {
+            let {title, manager_account: manager_id, telegram_id} = list.length ? current ? _.find(list, {id: current}) : list[0] : {
                 manager_account: '',
                 telegram_id: '',
                 title: ''
@@ -108,29 +109,65 @@ class ChannelPage extends Component {
 
 
     componentWillMount = () => {
-        this.getChannels(1)// @toDo set companyId
+        let promis = this.props.getUserAuthHashData();
+
+        promis.then(r => {
+            let decodedData;
 
 
-    }
+            try {
+                decodedData = JSON.parse(this.props.channels.authData);
+                let {id, username} = decodedData;
+                if (id && username) {
+                    this.setState({
+                        managerId: username,
+                        data: {...this.state.data, managerId: username}
+                    })
+                }
+            } catch (error) {
+                decodedData={};
+            }
+
+            console.log('decodedData', decodedData);
+
+            // отправляем key на сервер -> создаем или выбираем компани
+            // храним мд5 от данных и проверяем в bmt_token -> и проверяем его при входе и убиваем authKey
+            // если в редис уже нет этого ключа - то сообщаем о том, что опоздал -- надо отправить еще раз просим перейти по новой ссылке и опять повторяем аут
+            // если все гуд - сообщаем, что все гуд
+            // toDo createChannel with decodded data
+        });
+         this.getChannels(1)// @toDo set companyId
 
 
-    _handleTextFieldMenegerIdChange = (e) => {
+    };
+
+    stepperOnToggle = (e) => {
+        e.preventDefault();
         this.setState({
-            managerId: e.target.value,
-            data: {...this.state.data, managerId: e.target.value}
+            stepperOn: !this.state.stepperOn
+        })
+    };
+
+    _handleTextFieldMenegerIdChange = (e, newVal) => {
+        this.setState({
+            managerId: newVal,
+            data: {...this.state.data, managerId: newVal}
+        });
+
+
+    };
+    _handleTextFieldTelegramIdChange = (e, newVal) => {
+
+        this.setState({
+            telegramId: newVal,
+            data: {...this.state.data, telegramId: newVal}
         });
     };
-    _handleTextFieldTelegramIdChange = (e) => {
+    _handleTextFieldTitleChange = (e, newVal) => {
 
         this.setState({
-            telegramId: e.target.value,
-            data: {...this.state.data, telegramId: e.target.value}
-        });
-    };
-    _handleTextFieldTitleChange = (e) => {
-        this.setState({
-            title: e.target.value,
-            data: {...this.state.data, title: e.target.value}
+            title: newVal,
+            data: {...this.state.data, title: newVal}
         });
     };
 
@@ -248,7 +285,7 @@ class ChannelPage extends Component {
                         <TextField
                             key="titlekey"
                             hintText="Название канала"
-                            onChange={this._handleTextFieldTitleChange.bind()}
+                            onChange={this._handleTextFieldTitleChange}
                             value={this.state.title}
                             errorText={this.state.titleErr }
                         />
@@ -256,7 +293,7 @@ class ChannelPage extends Component {
                         <TextField
                             key="tikey"
                             hintText="Telegram Id канала"
-                            onChange={this._handleTextFieldTelegramIdChange.bind()}
+                            onChange={this._handleTextFieldTelegramIdChange}
                             value={this.state.telegramId }
                             errorText={this.state.telegramIdErr  }
                         />
@@ -264,7 +301,7 @@ class ChannelPage extends Component {
                         <TextField
                             key="mikey"
                             hintText="Manager Id канала"
-                            onChange={this._handleTextFieldMenegerIdChange.bind()}
+                            onChange={this._handleTextFieldMenegerIdChange}
                             value={this.state.managerId }
                             errorText={this.state.managerIdErr }
                         />
@@ -280,7 +317,13 @@ class ChannelPage extends Component {
                         />
                     </div>
 
+                    <div className="StepperBlock">
+                        <p>Для управления каналами <a href="" onClick={this.stepperOnToggle}>подтвердите менеджера</a>
+                            канала (аккаунт в Telegram)</p>
 
+                        {this.state.stepperOn ?
+                            <Stepper /> : ''}
+                    </div>
                     <RaisedButton label="Сохранить"
                                   onClick={this.saveData.bind(this)}
                                   fullWidth={true}
@@ -295,35 +338,36 @@ class ChannelPage extends Component {
                     <AppBar iconElementLeft={<IconButton
                         onTouchTap={this.handleToggle}><NavigationClose /></IconButton>}
                             title="Каналы"/>
-                    <Menu>
-                        {this.state.list.map((ch) => {
+                    <div>
+                        <Menu>
+                            {this.state.list.map((ch) => {
+                                return <div key={ch.id}><MenuItem
+                                    onTouchTap={() => this.toggleMenu(ch.id)}
+                                    checked={this.props.channels.current === ch.id}
 
-                            return <MenuItem key={ch.id}
-                                             checked={this.props.channels.current === ch.id}
-                                             onTouchTap={() => this.toggleMenu(ch.id)}
-                                             primaryText={ch.title}/>
-                        })}
+                                    primaryText={ch.title}/></div>;
+                            })}
 
+                        </Menu>
+                        <Divider />
+                        {this.props.channels.list.length < 5 ? <MenuItem
+                            key="addBtn"
+                            style={{color: '#ccc'}}
+                            primaryText="Добавить"
+                            onTouchTap={() => this.toggleMenu(0)}
+                            leftIcon={
+                                <AddIcon style={{color: '#559'}}/>
+                            }
+                        /> : <MenuItem
+                            disabled={true}
+                            key="addBtn"
+                            style={{color: '#ccc'}}
+                            primaryText="Максимальное количество каналов для аккаунта"
 
-                    </Menu>
-                    <Divider />
-                    {this.props.channels.list.length < 5 ? <MenuItem
-                        key="addBtn"
-                        style={{color: '#ccc'}}
-                        primaryText="Добавить"
-                        onTouchTap={() => this.toggleMenu(null)}
-                        leftIcon={
-                            <AddIcon style={{color: '#559'}}/>
+                        />
                         }
-                    /> : <MenuItem
-                        disabled={true}
-                        key="addBtn"
-                        style={{color: '#ccc'}}
-                        primaryText="Максимальное количество каналов для аккаунта"
 
-                    />
-                    }
-
+                    </div>
                 </Drawer>
 
             </div>
@@ -344,7 +388,8 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         setCurrentChannel: bindActionCreators(actions.setCurrentChannel, dispatch),
-        getChannels: bindActionCreators(actions.getChannels, dispatch)
+        getChannels: bindActionCreators(actions.getChannels, dispatch),
+        getUserAuthHashData: bindActionCreators(actions.getUserAuthHashData, dispatch),
     }
 }
 

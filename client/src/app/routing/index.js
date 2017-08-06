@@ -211,7 +211,7 @@ class Page extends Component {
         let rP = {
             'add': <AddPage />,
             'list': <ListPage />,
-            channel: <ChannelPage companyId={1} />,
+            channel: <ChannelPage companyId={1} postHash={this.props.postHash} />,
             show: <ShowPage postHash={this.props.postHash}/>
         };
 

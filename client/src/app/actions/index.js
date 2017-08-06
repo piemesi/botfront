@@ -6,7 +6,7 @@ import axios from 'axios'
 import cors from 'cors'
 import _ from 'lodash'
 
-import { apiUrl } from '../../../config/config.json';
+import { apiUrl, whUrl } from '../../../config/config.json';
 
 export const addNewUser = () => {
     // const username = `@${faker.internet.userName().toLowerCase()}`
@@ -278,4 +278,69 @@ export const setCurrentChannel = (current) => {
         type: 'SET_CURRENT_CHANNEL',
         current
     }
+};
+
+
+
+export const getUserAuthHash = () => {
+
+    let ls = localStorage.getItem('authKey') || 0;
+
+    let url = `${apiUrl}/get_user_auth_hash/${ls}`;
+
+    return  {
+
+        type: `GET_AUTH_HASH`,
+        payload: fetch(url)
+            .then(response => {
+
+                if( response.ok ) {
+                    let resp = response.json()
+
+                    return resp
+                }
+                else {
+                    return Promise.reject();
+                }
+            })
+            .then(json => {
+                return Promise.resolve(json)
+            })
+
+    };
+};
+
+export const getUserAuthHashData = () => {
+
+    let ls = localStorage.getItem('authKey') || 0;
+
+    if(!ls){
+        return Promise.reject();
+    }
+
+   // let url = `${whUrl}/auth/${ls}.txt`;
+     let url = `${whUrl}/get_auth_data/${ls}`;
+    console.log('authUrl',url)
+    let bodyData = new FormData();
+    bodyData.append('hash', ls); //,body:bodyData
+    return  {
+
+        type: `GET_AUTH_HASH_DATA`,
+        payload: fetch(url,{method:'GET'})
+            .then(response => {
+
+                if( response.ok ) {
+                    let resp = response.json()
+
+                    return resp
+                }
+                else {
+                    return Promise.reject();
+                }
+            })
+            .then(json => {
+                return Promise.resolve(json)
+            })
+
+    };
 };

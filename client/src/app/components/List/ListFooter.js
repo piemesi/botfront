@@ -23,7 +23,7 @@ class BottomMenu extends Component {
     };
 
     select = (index) => {
-        this.props.getPostsForChannel(1, index)
+        this.props.getPostsForChannel(this.props.channel.current, index)
         this.setState({selectedIndex: index});
     }
 
@@ -55,6 +55,7 @@ class BottomMenu extends Component {
 function mapStateToProps(state) {
     return {
         // tasks: state.tasksReducer.tasks,
+        channel: state.channelReducer,
 
     }
 }

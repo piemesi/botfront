@@ -1,5 +1,6 @@
 import React from 'react';
 import Chip from 'material-ui/Chip';
+import {blue300} from 'material-ui/styles/colors';
 
 /**
  * An example of rendering multiple Chips from an array of values. Deleting a chip removes it from the array.
@@ -36,7 +37,7 @@ export default class ListItemPeriods extends React.Component {
 
                 let label = per.toLocaleString("ru", options)
 
-                chipData.push({key: p.id, label})
+                chipData.push({key: p.id, label, sent: p.sent || null})
             })
         }
 
@@ -69,6 +70,7 @@ export default class ListItemPeriods extends React.Component {
     renderChip(data) {
         return (
             <Chip
+                backgroundColor={data.sent ? blue300 : null}
                 key={data.key}
                 onRequestDelete={() => this.handleRequestDelete(data.key)}
                 style={this.styles.chip}

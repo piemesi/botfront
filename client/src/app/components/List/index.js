@@ -13,11 +13,12 @@ import * as actions from '../../actions'
 import MaterialsList from './MaterialsList'
 import ListItem from './ListItem'
 import ListFooter from './ListFooter'
+import ContentSend from 'material-ui/svg-icons/content/send';
 
-
-
-
+import ChoosenSnackbar from '../Channel/choosenChannelInfo';
 import AppBar from 'material-ui/AppBar';
+
+import _ from 'lodash';
 
 class Materials extends Component {
 
@@ -29,24 +30,22 @@ class Materials extends Component {
             open: false
         };
     }
+
     handleDrawerToggle = () => this.setState({open: !this.state.open});
+
     componentWillMount() {
-        if(this.props.channels.current)
-        {
+        if (this.props.channels.current) {
             let promis = this.props.getPostsForChannel(this.props.channels.current);
 
             promis.then(() => {
-                console.log('data', this.props.tasks)
+
 
                 this.setState({
-                    tasksList:this.props.tasks
+                    tasksList: this.props.tasks
                 })
 
             })
         }
-
-
-
 
 
     }
@@ -69,37 +68,54 @@ class Materials extends Component {
 
     render() {
 
-         let listItems = this.props.focused ? [this.state.tasksList[this.props.focused]] : this.state.tasksList
+        let listItems = this.props.focused ? [this.state.tasksList[this.props.focused]] : this.state.tasksList
 
-          listItems = this.props.upd ? this.props.tasks : listItems
+        listItems = this.props.upd ? this.props.tasks : listItems;
 
+        // let listItems1 =_.orderBy(listItems, ['sent'], ['desc']);
+        let toSendlistItems =_.filter(listItems, {sent:null});
+        toSendlistItems =_.orderBy(toSendlistItems, ['order_time'], ['asc']);
 
+        let listItemsSent = _.filter(listItems, (i)=>{ return i.sent!==null});
+        listItemsSent =_.orderBy(listItemsSent, ['order_time'], ['desc']);
+        // _.remove(listItemsSent, {sent:null});
 
-        let page = this.props.channels.current  ? (<div> <AppBar
-            style={{backgroundColor:this.props.muiTheme.palette.primary3Color}}
+        let page = this.props.channels.current ? (<div><AppBar
+            style={{backgroundColor: this.props.muiTheme.palette.primary3Color}}
             onLeftIconButtonTouchTap={this.handleDrawerToggle}
             title="Полный список статей"
-        /><Drawer width={300} openSecondary={true} open={this.state.open} >
-            <MaterialsList materials={this.state.tasksList} />
+        /><Drawer width={300} openSecondary={true} open={this.state.open}>
+            <MaterialsList materials={this.state.tasksList}/>
         </Drawer>
-            {listItems.map((m) => {
-
-                // let arr =
-                console.log('PROPS focused2', this.props.focused)
+            {toSendlistItems.map((m) => {
 
 
-                return  <ListItem  material={m}/>
-            }) } <ListFooter /></div> ) : <Paper style={{fontSize:'25px',lineHeight:'30px', padding:'50px',color:this.props.muiTheme.palette.alertColor}} ><span>Для отображения списка постов - выберите канал</span></Paper>;
+
+
+
+            return <ListItem  key={m.id} material={m}/>
+        }) }
+            {listItemsSent.map((m) => {
+
+
+
+
+
+                return <ListItem key={m.id} material={m}/>
+            }) } <ListFooter /></div> ) : <Paper style={{
+            fontSize: '25px',
+            lineHeight: '30px',
+            padding: '50px',
+            color: this.props.muiTheme.palette.alertColor
+        }}><span>Для отображения списка постов - выберите канал</span></Paper>;
 
         return (
-            <div style={{textAlign:'left'}}>
-
+            <div style={{textAlign: 'left'}}>
 
 
                 {page}
 
-
-
+                <ChoosenSnackbar noClose={true}/>
             </div>
         );
     }
