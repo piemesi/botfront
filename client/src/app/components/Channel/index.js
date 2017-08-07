@@ -109,33 +109,40 @@ class ChannelPage extends Component {
 
 
     componentWillMount = () => {
-        let promis = this.props.getUserAuthHashData();
 
-        promis.then(r => {
-            let decodedData;
+        let ls = localStorage.getItem('authKey') || 0;
+
+        if(ls){
+            let promis = this.props.getUserAuthHashData(ls);
+
+            promis.then(r => {
+                let decodedData;
 
 
-            try {
-                decodedData = JSON.parse(this.props.channels.authData);
-                let {id, username} = decodedData;
-                if (id && username) {
-                    this.setState({
-                        managerId: username,
-                        data: {...this.state.data, managerId: username}
-                    })
+                try {
+                    decodedData = JSON.parse(this.props.channels.authData);
+                    let {id, username} = decodedData;
+                    if (id && username) {
+                        this.setState({
+                            managerId: username,
+                            data: {...this.state.data, managerId: username}
+                        })
+                    }
+                } catch (error) {
+                    decodedData={};
                 }
-            } catch (error) {
-                decodedData={};
-            }
 
-            console.log('decodedData', decodedData);
+                console.log('decodedData', decodedData);
 
-            // отправляем key на сервер -> создаем или выбираем компани
-            // храним мд5 от данных и проверяем в bmt_token -> и проверяем его при входе и убиваем authKey
-            // если в редис уже нет этого ключа - то сообщаем о том, что опоздал -- надо отправить еще раз просим перейти по новой ссылке и опять повторяем аут
-            // если все гуд - сообщаем, что все гуд
-            // toDo createChannel with decodded data
-        });
+                // отправляем key на сервер -> создаем или выбираем компани
+                // храним мд5 от данных и проверяем в bmt_token -> и проверяем его при входе и убиваем authKey
+                // если в редис уже нет этого ключа - то сообщаем о том, что опоздал -- надо отправить еще раз просим перейти по новой ссылке и опять повторяем аут
+                // если все гуд - сообщаем, что все гуд
+                // toDo createChannel with decodded data
+            });
+        }
+
+
          this.getChannels(1)// @toDo set companyId
 
 

@@ -310,13 +310,9 @@ export const getUserAuthHash = () => {
     };
 };
 
-export const getUserAuthHashData = () => {
+export const getUserAuthHashData = (ls) => {
 
-    let ls = localStorage.getItem('authKey') || 0;
 
-    if(!ls){
-        return Promise.reject();
-    }
 
    // let url = `${whUrl}/auth/${ls}.txt`;
      let url = `${whUrl}/get_auth_data/${ls}`;
