@@ -1,5 +1,5 @@
 /node_modules/
 /client/node_modules/
 /client/build/
-/client/config/config.json
+/client/src/app/config/config.json
 /.idea
