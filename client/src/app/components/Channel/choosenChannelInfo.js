@@ -41,7 +41,7 @@ import * as actions from '../../actions'
 
 
     handleRequestClose = () => {
-        if(this.porps.noClose){
+        if(this.props.noClose){
             return false;
         }
 
