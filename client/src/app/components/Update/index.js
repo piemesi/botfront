@@ -34,7 +34,7 @@ const style = {
     }
 }
 
-
+import Toggle from 'material-ui/Toggle';
 import _ from 'lodash'
 
 import EditBody from '../Add/EditBody'
@@ -52,7 +52,13 @@ import DateTimePicker from '../../containers/Pages/DateTimeSelect'
 
 
 import ContentRemove from 'material-ui/svg-icons/content/remove';
+const styles = {
 
+    underlineStyle: {
+        borderColor: colors.orange500,
+    },
+
+};
 class UpdatePage extends Component {
 
     constructor(props, context) {
@@ -68,6 +74,9 @@ class UpdatePage extends Component {
             days: null,
             daysArrRender: null,
 
+            minutes_to_read: material.minutes_to_read,
+            preview: material.preview || '',
+            need_link: material.need_link || 0,
         };
 
 
@@ -257,7 +266,10 @@ class UpdatePage extends Component {
         let material = {...this.props.material,
             periods:dates,
             title:this.state.header,
-            text:this.reactQuillRef.state.text
+            text:this.reactQuillRef.state.text,
+            preview: this.state.preview || null,
+            need_link: this.state.need_link,
+            minutes_to_read: this.state.minutes_to_read,
         }
         console.log('data', material);
        this.props.updateMaterial(material, material.id, true)
@@ -271,6 +283,28 @@ class UpdatePage extends Component {
             <ContentRemove />
         </IconButton>
     }
+
+    _handleTextFieldPreviewChange = (e) => {
+
+
+        this.setState({
+            preview: e.target.value,
+            data: {...this.state.data, preview: e.target.value}
+        });
+    };
+
+    _handleTextFieldMinutesToReadChange = (e) => {
+
+
+        this.setState({
+            minutes_to_read: e.target.value,
+            data: {...this.state.data, minutes_to_read: e.target.value}
+        });
+    };
+
+    handleChange = (event, logged) => {
+        this.setState({need_link: logged});
+    };
 
     render() {
         return ( <div >
@@ -288,6 +322,42 @@ class UpdatePage extends Component {
             }}
             />
 
+            <TextField key="previewkey"
+                       hintText="preview of the post"
+                       multiLine={true}
+                       fullWidth={true}
+                       style={{display: this.state.need_link ? 'block' : 'none'}}
+                       onChange={this._handleTextFieldPreviewChange.bind()}
+                       value={this.state.preview || ''}
+                       rows={2}
+                       rowsMax={6}
+            />
+
+
+            <div style={{
+                display: 'flex', justifyContent: 'space-around',
+                alignItems: 'baseline'
+            }} className="bottom-add-space">
+
+
+                <TextField
+                    key="minuteskey"
+                    hintText="Время прочтения поста "
+                    onChange={this._handleTextFieldMinutesToReadChange.bind()}
+                    value={this.state.minutes_to_read}
+                    underlineStyle={styles.underlineStyle}
+                    className="time-to-read"
+                />
+
+                <Toggle
+                    label="Превью и ссылка на пост"
+                    defaultToggled={this.state.need_link}
+                    onToggle={this.handleChange}
+                    labelPosition="right"
+                    style={{marginLeft: 20, maxWidth: '300px', fontSize: '16px'}}
+                    className="preview-link"
+                />
+            </div>
 
             <div style={style.flexDivStyle}>
                 <div className="datesInputs">
