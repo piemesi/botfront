@@ -105,6 +105,7 @@
     "typography": "^0.15.10",
     "typography-plugin-code": "^0.15.11",
     "typography-theme-fairy-gates": "^0.15.11",
-    "typography-theme-lincoln": "^0.15.11"
+    "typography-theme-lincoln": "^0.15.11",
+    "universal-cookie": "^2.1.0"
   }
 }

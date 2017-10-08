@@ -1,6 +1,8 @@
 import constants from '../constants'
 import _ from 'lodash'
-const tasks = {};
+const tasks = {
+
+};
 
 const tasksReducer = (state = tasks, action) => {
 
@@ -10,6 +12,7 @@ const tasksReducer = (state = tasks, action) => {
 
         case 'SET_FOCUSED_MATERIAL':
             console.log('SET_FOCUSED_MATERIAL', action.materialId)
+            console.log('state', state)
 
             let arr = _.filter(state.tasks, {id: action.materialId})
 

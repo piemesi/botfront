@@ -1,7 +1,7 @@
 import constants from '../constants'
 import _ from 'lodash'
 const channels = {
-    companyId: 1,
+    companyId: null,
     current: null,
     list: [],
     //     {id:1, title:'test',telegramId:null, managerId:null},
@@ -11,10 +11,27 @@ const channels = {
     authData:[]
 };
 import base64 from 'base-64' ;
+import * as funcs from '../mainFunc';
+
 const channelReducer = (state = channels, action) => {
 
     console.log("CURRENT_ACTION", action)
     switch (action.type) {
+
+        case `GET_CHANNEL_REJECTED`:
+
+            return {
+                ...state,
+                ...action.payload
+            };
+
+        case `GET_CHANNEL_FULFILLED`:
+
+            return {
+                ...state,
+                list: action.payload.channels
+            };
+
         case `GET_CHANNELS_REJECTED`:
 
             return {
@@ -58,7 +75,25 @@ const channelReducer = (state = channels, action) => {
              return {
                 ...state
             };
+        case `IDENT_USER_FULFILLED`:
 
+
+            funcs.setCookedSession(action.payload.company.id, action.payload.company.cooked_key);
+            return {
+                ...state,
+                companyId:action.payload.company.id
+            };
+
+        case 'LOGOUT':
+            localStorage.removeItem('bmt_token');
+            localStorage.removeItem('authKey');
+            return {...channels};
+
+        case `IDENT_USER_REJECTED`:
+
+            return {
+                ...state
+            };
 
         case 'SET_CURRENT_CHANNEL':
 
@@ -67,7 +102,13 @@ const channelReducer = (state = channels, action) => {
                 current: action.current,
 
             };
+        case 'SET_CURRENT_COMPANY':
 
+            return {
+                ...state,
+                companyId: action.current,
+
+            };
 
         default:
 

@@ -1,2 +1,4 @@
 *.log
 src/app/config/config.json
+/.idea
+

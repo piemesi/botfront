@@ -72,7 +72,7 @@ export default class ListItemPeriods extends React.Component {
             <Chip
                 backgroundColor={data.sent ? blue300 : null}
                 key={data.key}
-                onRequestDelete={() => this.handleRequestDelete(data.key)}
+                // onRequestDelete={() => this.handleRequestDelete(data.key)}
                 style={this.styles.chip}
             >
                 {data.label}

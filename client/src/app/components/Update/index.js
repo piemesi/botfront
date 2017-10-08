@@ -69,14 +69,16 @@ class UpdatePage extends Component {
         this.dates = [];
         this.periodsLast = 0;
         this.state = {
-            header: material.title,
+            header:   '',
             data: null,
             days: null,
             daysArrRender: null,
 
-            minutes_to_read: material.minutes_to_read,
-            preview: material.preview || '',
-            need_link: material.need_link || 0,
+            minutes_to_read:   null,
+            preview:  '',
+            need_link:   0,
+
+            text: ''
         };
 
 
@@ -95,7 +97,7 @@ class UpdatePage extends Component {
         let itemK = this.periodsLast;
 
 
-        console.log('EEEEEE',this.periodsLast)
+
 
         daysArr.push(
             this.makeDaysItem(keyK, itemK))
@@ -148,13 +150,33 @@ class UpdatePage extends Component {
         />
     }
 
+
+    getPostByHash=()=>{
+        this.props.getPost(this.props.material.hash).then(r=>{
+            console.log(r,'------->')
+
+            let {text, title : header, minutes_to_read, preview, need_link} = this.props.post;
+                this.setState({
+                    text, header, minutes_to_read, preview, need_link
+                })
+console.log('text',text)
+            // if(r.value && r.value.post){
+            //     let {text, title : header, minutes_to_read, preview, need_link} = r.value.post;
+            //     this.setState({
+            //         text, header, minutes_to_read, preview, need_link
+            //     })
+            // }
+
+
+        })
+    };
+
     componentWillMount = () => {
 
         let days = [];
         let daysRender = [];
 
-
-
+        this.getPostByHash();
 
         this.props.material.periods.map((mper,item)=>{
 
@@ -170,7 +192,7 @@ class UpdatePage extends Component {
             daysRender.push(
                 <div className="daysRenderItem">
                     {this.makeDaysItem(keyK, itemK, mper.start)}
-                    {this.makeIconDaysDeleteBtn(itemK)}
+                    {/*{this.makeIconDaysDeleteBtn(itemK)}*/}
                 </div>
             )
 
@@ -202,8 +224,8 @@ class UpdatePage extends Component {
     saveData() {
 
 
-        console.log('reactQuillRef', this.reactQuillRef)
-        console.log('reactQuillRef2', this.reactQuillRef.state.text)
+        // console.log('reactQuillRef', this.reactQuillRef)
+        // console.log('reactQuillRef2', this.reactQuillRef.state.text)
 
         fetch(`${apiUrl}/get_posts`, {method: 'get'}).then((response) => {
             response.json().then((jsonReponse) => {
@@ -272,9 +294,14 @@ class UpdatePage extends Component {
             minutes_to_read: this.state.minutes_to_read,
         }
         console.log('data', material);
-       this.props.updateMaterial(material, material.id, true)
+        if(this.props.hash){
+            this.props.updateMaterial(material, this.props.hash, true)
+            this.getPostByHash();
+            this.props.closeBtn();
+        }
 
-        this.props.closeBtn()
+       //@toDo error of there is no post Notifiyng
+
 
     }
 
@@ -316,11 +343,11 @@ class UpdatePage extends Component {
                 errorText={this.state.headerErr || ''}
 
             />
-
-            <EditBody text={this.props.material.text} ref={(el) => {
+            { this.props.post ?  <EditBody text={ this.props.post.text } ref={(el) => {
                 this.reactQuillRef = el
             }}
-            />
+            /> : ''}
+
 
             <TextField key="previewkey"
                        hintText="preview of the post"
@@ -328,7 +355,7 @@ class UpdatePage extends Component {
                        fullWidth={true}
                        style={{display: this.state.need_link ? 'block' : 'none'}}
                        onChange={this._handleTextFieldPreviewChange.bind()}
-                       value={this.state.preview || ''}
+                       value={this.state.preview && this.state.preview !== "null" ? this.state.preview  : ''}
                        rows={2}
                        rowsMax={6}
             />
@@ -339,6 +366,16 @@ class UpdatePage extends Component {
                 alignItems: 'baseline'
             }} className="bottom-add-space">
 
+                <div style={style.flexDivStyle}>
+                    <div className="datesInputs">
+                        {this.state.daysRender.map((d) => d)}
+                    </div>
+                    {/*<FloatingActionButton mini={true} style={style.btnAdd}*/}
+                    {/*onClick={this.addPeriod}*/}
+                    {/*>*/}
+                    {/*<ContentAdd />*/}
+                    {/*</FloatingActionButton>*/}
+                </div>
 
                 <TextField
                     key="minuteskey"
@@ -351,7 +388,7 @@ class UpdatePage extends Component {
 
                 <Toggle
                     label="Превью и ссылка на пост"
-                    defaultToggled={this.state.need_link}
+                    toggled={this.state.need_link}
                     onToggle={this.handleChange}
                     labelPosition="right"
                     style={{marginLeft: 20, maxWidth: '300px', fontSize: '16px'}}
@@ -359,16 +396,7 @@ class UpdatePage extends Component {
                 />
             </div>
 
-            <div style={style.flexDivStyle}>
-                <div className="datesInputs">
-                    {this.state.daysRender.map((d) => d)}
-                </div>
-                <FloatingActionButton mini={true} style={style.btnAdd}
-                                      onClick={this.addPeriod}
-                >
-                    <ContentAdd />
-                </FloatingActionButton>
-            </div>
+
 
 
             <RaisedButton label="Save" ref={(r)=>this.saveBtn=r} onClick={this.saveData.bind(this)} rippleStyle={{
@@ -393,13 +421,15 @@ class UpdatePage extends Component {
 function mapStateToProps(state) {
     return {
         tasks: state.tasksReducer.tasks,
+        post: state.tasksReducer.post,
 
     }
 }
 
 function mapDispatchToProps(dispatch) {
     return {
-        updateMaterial: bindActionCreators(actions.updateMaterial, dispatch)
+        updateMaterial: bindActionCreators(actions.updateMaterial, dispatch),
+        getPost: bindActionCreators(actions.getPost, dispatch)
     }
 }
 

@@ -1,4 +1,6 @@
 {
   "apiUrl": "http://botme.top:84",
-  "whUrl": "https://softmade.ru"
+  "whUrl": "https://softmade.ru",
+  "SET_CHANNEL_ID_MINUTES": 45,
+  "SET_SESSION_MINUTES": 180
 }

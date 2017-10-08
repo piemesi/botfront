@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, {Component, PropTypes} from 'react';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import Toggle from 'material-ui/Toggle';
@@ -22,6 +22,7 @@ import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import Dialog from 'material-ui/Dialog';
 import UpdatePage from '../Update'
 
+import ActionDone from 'material-ui/svg-icons/action/done';
 
 //REDUX
 import {connect} from 'react-redux'
@@ -42,6 +43,7 @@ class ListItem extends Component {
         this.state = {
             expanded: false,
             tasksList: [],
+            hide: this.props.material.hide,
             active: this.props.material.active,
             open: false,
         };
@@ -49,6 +51,7 @@ class ListItem extends Component {
 
 
     handleOpen = () => {
+        this.props.closeDrawer();
         this.setState({open: true});
     };
 
@@ -68,15 +71,15 @@ class ListItem extends Component {
     handleActiveToggle = (event, toggle) => {
 
         let material = {...this.props.material, active: toggle};
-        this.props.updateMaterial(material, this.props.material.id)
-        // this.setState({active: toggle});
+        this.props.updateMaterial(material, this.props.material.hash)
+        this.setState({active: toggle});
     };
 
     handleDeleteToggle = (event, toggle) => {
 
         let material = {...this.props.material, hide: toggle};
-        this.props.updateMaterial(material, this.props.material.id)
-        // this.setState({active: toggle});
+        this.props.updateMaterial(material, this.props.material.hash)
+        this.setState({hide: toggle});
     };
 
     handleExpand = () => {
@@ -86,8 +89,6 @@ class ListItem extends Component {
     handleReduce = () => {
         this.setState({expanded: false});
     };
-
-
 
 
     render() {
@@ -102,54 +103,57 @@ class ListItem extends Component {
 
         ];
 
-        {/*<FlatButton*/}
-            {/*label="Submit"*/}
-            {/*primary={true}*/}
-            {/*keyboardFocused={true}*/}
-            {/*onTouchTap={this.updateEditData.bind(this)}*/}
-        {/*/>,*/}
-        let {material} = this.props
+        {/*<FlatButton*/
+        }
+        {/*label="Submit"*/
+        }
+        {/*primary={true}*/
+        }
+        {/*keyboardFocused={true}*/
+        }
+        {/*onTouchTap={this.updateEditData.bind(this)}*/
+        }
+        {/*/>,*/
+        }
+        let {material} = this.props;
 
         let htmlInput = material.text
         let htmlToReactParser = new Parser();
         let preparedText = htmlToReactParser.parse(htmlInput);
+
+        let per = new Date(material.sent );
+        per.setTime(per.getTime() + (3*60*60*1000));
+
+
+        let options = {
+            month: 'long',
+            day: 'numeric',
+            year: 'numeric',
+            hour: 'numeric',
+            minute:'numeric'
+        };
+
+        let sentDate = per.toLocaleString("ru", options);
+
+        let sentLabel = "отправлено: " + sentDate;
+
         return (
-            <Card style={material.sent ? {...{},backgroundColor:'#ccc'} :{} } key={material.id} expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
+            <Card className="list__post-item"  style={material.sent ? {...{}, backgroundColor: '#ccc'} : {} } key={material.id}
+                  expanded={this.state.expanded} onExpandChange={this.handleExpandChange}>
                 <CardHeader
+                    style={{
+                        display:'flex',
+                        flexWrap:'wrap',
+                    }}
                     title={material.title}
-                    subtitle={"создано: " + material.created_at}
+                    subtitle={this.props.isSent ? sentLabel : "создано: " + material.created_at}
                     // avatar="images/ok-128.jpg"
                     actAsExpander={true}
                     showExpandableButton={true}
                 >
-                  <Periods chipData={material.periods || null}/>
+                    <Periods chipData={material.periods || null}/>
                 </CardHeader>
-                <CardText className="cardText">
-                    <div style={{display:'flex', justifyContent:'flex-start'}}>
-                    <Toggle
-                    toggled={this.state.expanded}
-                    onToggle={this.handleToggle}
-                    labelPosition="right"
-                    label="Показать пост"
-                    style={{    marginRight: '30px', width:'initial'}}
-                    />
-                        <Link to={`/show/${material.channel_id}/${material.hash}`}>
-                            Перейти на страницу поста
-                        </Link>
 
-</div>
-
-
-                    {/*<Toggle*/}
-                        {/*key={'act'+material.id}*/}
-                        {/*defaultToggled={material.active}*/}
-                        {/*onToggle={this.handleActiveToggle}*/}
-                        {/*labelPosition="right"*/}
-                        {/*label={"Active" + material.active}*/}
-                    {/*/>*/}
-
-
-                </CardText>
                 {/*<CardMedia*/}
                 {/*expandable={true}*/}
                 {/*overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle"/>}*/}
@@ -157,62 +161,116 @@ class ListItem extends Component {
                 {/*<img src="images/nature-600-337.jpg" alt=""/>*/}
                 {/*</CardMedia>*/}
                 <CardTitle title={material.title} subtitle={"обновлено: " + material.updated_at} expandable={true}/>
-                <CardText expandable={true}>
+                <CardText className="post__body-preview" expandable={true} style={{  }}>
                     {preparedText}
                 </CardText>
+                <CardText className="cardText">
+                    <div style={{display: 'flex', justifyContent: 'space-between',alignItems:'center'}}>
+                        {/*<Toggle*/}
+                        {/*toggled={this.state.expanded}*/}
+                        {/*onToggle={this.handleToggle}*/}
+                        {/*labelPosition="right"*/}
+                        {/*label="Показать пост"*/}
+                        {/*style={{marginRight: '30px', width: 'initial'}}*/}
+                        {/*/>*/}
+
+                        {this.props.isSent ?
+                            <div style={{display:'flex',alignItems:'center', textTransform:'uppercase',fontSize:12, color:'rgba(0, 0, 0, 0.3)'}}><ActionDone size={10} color="grey"  style={{marginRight:'10px'}} />  Отправленно</div>
+                        :
+                            this.state.active ?
+                                <span style={{color:'green', fontWeight:'bold'}}> активный </span> :
+                                <span style={{color:'red' }}> неактивный </span>
+                        }
+
+
+
+                        <IconMenu
+                            iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
+                            anchorOrigin={{horizontal: 'left', vertical: 'top'}}
+                            targetOrigin={{horizontal: 'left', vertical: 'top'}}
+                        >
+
+
+                                <MenuItem disabled={this.props.isSent} onTouchTap={this.handleOpen} primaryText="Edit" leftIcon={<EditIcon />}/>
+                                <Divider />
+
+
+                                <MenuItem
+                                    disabled={this.props.isSent}
+                                    leftIcon={<Toggle
+                                        disabled={this.props.isSent}
+                                key={'act' + material.id}
+                                toggled={this.state.active}
+                                onToggle={this.handleActiveToggle}
+                                labelPosition="right"
+                                // label={"Active" + material.active}
+                                />} value="Del" primaryText="Активный">
+
+                                </MenuItem>
+
+
+                            <Divider />
+                            <MenuItem leftIcon={<Toggle
+                                key={'del' + material.id}
+                                toggled={this.state.hide}
+                                onToggle={this.handleDeleteToggle}
+                                labelPosition="right"
+                                // disabled={material.hide}
+                                // label={"Hide" + material.hide}
+                            />} value="Del" primaryText="Удалить">
+
+                            </MenuItem>
+
+
+                        </IconMenu>
+
+
+
+
+                        <Link to={`/show/${material.channel_id}/${material.hash}`}>
+                            Перейти на страницу поста
+                        </Link>
+
+                        <FlatButton disabled={this.state.expanded !==true} labelStyle={this.state.expanded ? {} : {color:"ccc"}} label="Свернуть описание поста" onTouchTap={this.handleReduce}/>
+
+                    </div>
+
+
+
+                </CardText>
                 <CardActions>
-                    <IconMenu
-                        iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
-                        anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                        targetOrigin={{horizontal: 'left', vertical: 'top'}}
-                    >
-                        <MenuItem onTouchTap={this.handleOpen} primaryText="Edit" leftIcon={<EditIcon />} />
-                        <Divider />
 
 
-                        <MenuItem  leftIcon={<Toggle
-                            key={'act'+material.id}
-                            defaultToggled={material.active}
-                            onToggle={this.handleActiveToggle}
-                            labelPosition="right"
-                            // label={"Active" + material.active}
-                        />}  value="Del" primaryText="Активный"  >
-
-                        </MenuItem>
-                        <Divider />
-                        <MenuItem  leftIcon={<Toggle
-                            key={'del'+material.id}
-                            defaultToggled={material.hide}
-                            onToggle={this.handleDeleteToggle}
-                            labelPosition="right"
-                            // disabled={material.hide}
-                            // label={"Hide" + material.hide}
-                        />}  value="Del" primaryText="Удалить"  >
-
-                        </MenuItem>
 
 
-                    </IconMenu>
-                    <Dialog
-                        title="Редактирование поста"
-                        actions={actions}
-                        modal={false}
-                        open={this.state.open}
-                        onRequestClose={this.handleClose}
-                        autoScrollBodyContent={true}
-                        bodyClassName="dialog-body"
-                        contentClassName="dialog-content"
-                        overlayClassName="dialog-overlay"
-                        paperClassName="dialog-paper"
-                    >
-                        <UpdatePage closeBtn={()=>this.handleClose()}  ref={(r)=>{
-                            this.updateEditPage=r
-                        }} material={material}  />
-
-                    </Dialog>
-                    {/*<FlatButton label="Expand" onTouchTap={this.handleExpand}/>*/}
-                    <FlatButton label="Свернуть описание поста" onTouchTap={this.handleReduce}/>
                 </CardActions>
+
+                <Dialog
+                    title="Редактирование поста"
+                    actions={actions}
+                    modal={false}
+                    open={this.state.open}
+                    onRequestClose={this.handleClose}
+                    autoScrollBodyContent={true}
+                    bodyClassName="dialog-body"
+                    contentClassName="dialog-content"
+                    overlayClassName="dialog-overlay"
+                    paperClassName="dialog-paper"
+                    style={{paddingTop:"0px",top:"0px"}}
+                >
+                    {this.state.open ?
+                        <UpdatePage key={material.hash} hash={material.hash} closeBtn={(e) => this.handleClose(e)}
+                                    ref={(r) => {
+                                        this.updateEditPage = r
+                                    }} material={{
+                            periods: material.periods,
+                            hash: material.hash,
+                            hide: this.state.hide,
+                            active: this.state.active
+                        }}/>//...material
+                        : ''}
+
+                </Dialog>
             </Card>
 
 
@@ -222,6 +280,14 @@ class ListItem extends Component {
     }
 }
 
+ListItem.propTypes = {
+    closeDrawer: PropTypes.func,
+    isSent: PropTypes.bool
+};
+
+ListItem.defaultProps = {
+    isSent: false
+};
 
 function mapStateToProps(state) {
     return {

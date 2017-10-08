@@ -156,7 +156,7 @@ class VerticalLinearStepper extends React.Component {
     }
 }
 
-import muiThemeable from 'material-ui/styles/muiThemeable';
+// import muiThemeable from 'material-ui/styles/muiThemeable';
 
 function mapStateToProps(state) {
     return {
@@ -172,6 +172,6 @@ function mapDispatchToProps(dispatch) {
 }
 
 
-const withMui = muiThemeable()(VerticalLinearStepper);
+// const withMui = muiThemeable()(VerticalLinearStepper);
 
-export default connect(mapStateToProps, mapDispatchToProps)(withMui)
+export default connect(mapStateToProps, mapDispatchToProps)(VerticalLinearStepper)

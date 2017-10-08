@@ -23,9 +23,9 @@ class BottomMenu extends Component {
     };
 
     select = (index) => {
-        this.props.getPostsForChannel(this.props.channel.current, index)
+        this.props.getPostsForChannel(this.props.channel.current, index);
         this.setState({selectedIndex: index});
-    }
+    };
 
     render() {
         return (

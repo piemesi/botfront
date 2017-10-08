@@ -28,7 +28,6 @@ import './mobile.scss'
 const styles = {
     container: {
         textAlign: 'center',
-        fontFamily: "'Roboto', sans-serif"
     },
     stepper: {
         textAlign: 'left',
@@ -156,7 +155,7 @@ class StartPage extends Component {
                 <MuiThemeProvider muiTheme={muiTheme}>
 
 
-                    <div className="page-wrap" style={{width: "100%", fontFamily: "'Roboto', sans-serif"}}>
+                    <div className="page-wrap" style={{width: "100%"}}>
 
                         <header className="sso-header">
                             <div className="sso-header__name">

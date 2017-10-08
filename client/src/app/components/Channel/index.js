@@ -33,10 +33,16 @@ const style = {
 }
 import Toggle from 'material-ui/Toggle';
 
+import {
+    Redirect
+} from 'react-router-dom';
+
+
 
 import IconButton from 'material-ui/IconButton';
 import DateTimePicker from '../../containers/Pages/DateTimeSelect'
 
+import * as funcs from '../../mainFunc';
 
 const styles = {
 
@@ -101,8 +107,9 @@ class ChannelPage extends Component {
             }
 
             this.setState({
-                title, managerId: manager_id, telegramId: telegram_id, currentChannelId: current,
+                title, telegramId: telegram_id, currentChannelId: current,
                 list: list
+                // managerId: manager_id,
             })
         })
     }
@@ -110,40 +117,56 @@ class ChannelPage extends Component {
 
     componentWillMount = () => {
 
-        let ls = localStorage.getItem('authKey') || 0;
-
-        if(ls){
-            let promis = this.props.getUserAuthHashData(ls);
-
-            promis.then(r => {
-                let decodedData;
+        let data = funcs.getCookedSession();
+        if (!data) {
+            let {from} = this.props.location.state || {from: {pathname: '/'}}
 
 
-                try {
-                    decodedData = JSON.parse(this.props.channels.authData);
-                    let {id, username} = decodedData;
-                    if (id && username) {
-                        this.setState({
-                            managerId: username,
-                            data: {...this.state.data, managerId: username}
-                        })
-                    }
-                } catch (error) {
-                    decodedData={};
-                }
+            return (
+                <Redirect to={from}/>
+            )
 
-                console.log('decodedData', decodedData);
-
-                // отправляем key на сервер -> создаем или выбираем компани
-                // храним мд5 от данных и проверяем в bmt_token -> и проверяем его при входе и убиваем authKey
-                // если в редис уже нет этого ключа - то сообщаем о том, что опоздал -- надо отправить еще раз просим перейти по новой ссылке и опять повторяем аут
-                // если все гуд - сообщаем, что все гуд
-                // toDo createChannel with decodded data
-            });
+        }else{
+            this.props.setCurrentCompany(data.companyId)
+            this.getChannels(data.companyId);
+            console.log(data)
+            this.setState({managerId: data.un })
+            console.log('fff', this.state)
         }
+//         let ls = localStorage.getItem('authKey') || 0;
+// console.log('this.props.channels',this.props.channels)
+//         if(ls){
+//             let promis = this.props.getUserAuthHashData(ls);
+//
+//             promis.then(r => {
+//                 let decodedData;
+//
+//
+//                 try {
+//                     decodedData = JSON.parse(this.props.channels.authData);
+//                     let {id, username} = decodedData;
+//                     if (id && username) {
+//                         this.setState({
+//                             managerId: username,
+//                             data: {...this.state.data, managerId: username}
+//                         })
+//                     }
+//                 } catch (error) {
+//                     decodedData={};
+//                 }
+//
+//                 console.log('decodedData', decodedData);
+//
+//                 // отправляем key на сервер -> создаем или выбираем компани
+//                 // храним мд5 от данных и проверяем в bmt_token -> и проверяем его при входе и убиваем authKey
+//                 // если в редис уже нет этого ключа - то сообщаем о том, что опоздал -- надо отправить еще раз просим перейти по новой ссылке и опять повторяем аут
+//                 // если все гуд - сообщаем, что все гуд
+//                 // toDo createChannel with decodded data
+//             });
+//         }
 
 
-         this.getChannels(1)// @toDo set companyId
+         this.getChannels(this.props.channels.companyId)// @toDo set companyId
 
 
     };
@@ -185,7 +208,7 @@ class ChannelPage extends Component {
 
 
         let {title, manager_account: manager_id, telegram_id} = channel ? _.find(list, {id: channel}) : {
-            manager_account: '',
+            // manager_account: '',
             telegram_id: '',
             title: ''
         };
@@ -193,8 +216,9 @@ class ChannelPage extends Component {
 
         this.setState({
             title,
-            managerId: manager_id, telegramId: telegram_id, currentChannelId: channel
+            currentChannelId: channel, telegramId: telegram_id,
         })
+        // managerId: manager_id,
 
     };
 
@@ -324,13 +348,7 @@ class ChannelPage extends Component {
                         />
                     </div>
 
-                    <div className="StepperBlock">
-                        <p>Для управления каналами <a href="" onClick={this.stepperOnToggle}>подтвердите менеджера</a>
-                            канала (аккаунт в Telegram)</p>
 
-                        {this.state.stepperOn ?
-                            <Stepper /> : ''}
-                    </div>
                     <RaisedButton label="Сохранить"
                                   onClick={this.saveData.bind(this)}
                                   fullWidth={true}
@@ -394,6 +412,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return {
+        setCurrentCompany: bindActionCreators(actions.setCurrentCompany, dispatch),
         setCurrentChannel: bindActionCreators(actions.setCurrentChannel, dispatch),
         getChannels: bindActionCreators(actions.getChannels, dispatch),
         getUserAuthHashData: bindActionCreators(actions.getUserAuthHashData, dispatch),

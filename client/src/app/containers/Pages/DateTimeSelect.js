@@ -122,7 +122,7 @@ const Test = React.createClass({
         const calendar = (<Calendar
             locale={ruRU}
             style={{ zIndex: 1800 }}
-            dateInputPlaceholder="date of post"
+            dateInputPlaceholder="Дата и время поста..."
             formatter={getFormat(state.showTime)}
             // disabledTime={state.showTime ? disabledTime : null}
             timePicker={state.showTime ? timePickerElement : null}
@@ -180,7 +180,7 @@ const Test = React.createClass({
                             return (
                                 <span tabIndex="0">
                 <input
-                    placeholder="please select"
+                    placeholder="укажите дату и время"
                     style={{ width: 250 }}
                     disabled={state.disabled}
                     readOnly

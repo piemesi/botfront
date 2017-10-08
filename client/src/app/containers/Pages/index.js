@@ -28,7 +28,7 @@ import './mobile.scss'
 const styles = {
     container: {
         textAlign: 'center',
-        fontFamily: "'Roboto', sans-serif"
+
     },
     stepper: {
         textAlign: 'left',

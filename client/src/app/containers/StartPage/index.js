@@ -23,7 +23,7 @@ import '../../css/main.less'
 const styles = {
     container: {
         textAlign: 'center',
-        fontFamily: "'Roboto', sans-serif"
+
     },
     stepper: {
         textAlign: 'left',

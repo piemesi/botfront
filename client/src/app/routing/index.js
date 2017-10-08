@@ -8,6 +8,36 @@ import {
     withRouter
 } from 'react-router-dom'
 
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import * as colors from 'material-ui/styles/colors';
+import {fade} from 'material-ui/utils/colorManipulator';
+
+
+const muiTheme = getMuiTheme({
+    fontFamily: 'Geometria',
+    palette: {
+        accent1Color: colors.purple500,// colors.cyan500,//deepOrange500,
+        primary1Color: '#00bfa5', //cyan500, //"#E6E6FA",
+        primary2Color: colors.cyan700,
+        primary3Color: colors.grey400,
+        // accent1Color: pinkA200,
+        accent2Color: colors.grey100,
+        alertColor: '#ccc',
+        // accent3Color: colors.grey500,
+        textColor: colors.darkBlack,
+        // alternateTextColor: colors.white,
+        canvasColor: colors.white,// colors.amber500, //"#E6E6FA", //
+        borderColor: colors.grey300,
+        disabledColor: fade(colors.darkBlack, 0.3),
+        pickerHeaderColor: colors.cyan500,
+        clockCircleColor: fade(colors.darkBlack, 0.07),
+        shadowColor: colors.fullBlack,
+    },
+});
+
+
+import './routing.scss'
 const Public = () => <h3>Посадочная страница</h3>
 const Protected = (props) => {
 
@@ -49,7 +79,7 @@ const Protected = (props) => {
             </CSSTransitionGroup>
         </div>
     </div>
-}
+};
 
 const fakeAuth = {
     isAuthenticated: localStorage.getItem('bmt_token') || false,
@@ -64,30 +94,19 @@ const fakeAuth = {
     }
 }
 
-const AuthButton = withRouter(({history}) => (
-    fakeAuth.isAuthenticated ? (
-        <p>
-            Welcome!<br/>
-            <button onClick={() => {
-                fakeAuth.signout(() => history.push('/'))
-            }}>Sign out
-            </button>
-            <br/>
-            <Link onlyActiveOnIndex={true} to="/add/1/2">Перейти к управлению аккаунтом
-            </Link>
-        </p>
-    ) : (
-        <div><h2>Сервис управления каналами Telegram </h2>
-            <p style={{color:colors.grey600}}>Для владельцев каналов и SMM-менеджеров</p>
-            <span><em>Публичный доступ: осень 2017</em></span></div>
-    )
-))
+import AuthButton from '../components/InfoPage';
 
+import AuthStep from '../Auth/index';
+class LoginPage extends Component {
 
-class LoginPage extends React.Component {
-    state = {
-        redirectToReferrer: false
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            redirectToReferrer: false
+        }
     }
+
 
     login = () => {
         fakeAuth.authenticate(() => {
@@ -107,8 +126,23 @@ class LoginPage extends React.Component {
 
         return (
             <div>
-                <p>You must log in to view the page at {from.pathname}</p>
-                {/*<button onClick={this.login}>Log in</button>*/}
+                <MuiThemeProvider muiTheme={muiTheme}>
+                    <div className="page-wrap"
+                         >
+                        {/*<p>You must log in to view the page at {from.pathname}</p>*/}
+                        {/*<button onClick={this.login}>Log in</button>*/}
+                        <Paper zDepth={3} rounded={true} style={{margin:'20px 0px', padding:'20px 20px 30px'}} >
+                        <div className="telegram-logos"  >
+                            <img src="/images/telegram_man.jpg" />
+                            <img  src="/images/telegram_girl.png" />
+                        </div>
+                        <AuthStep />
+                        </Paper>
+
+
+
+                    </div>
+                </MuiThemeProvider>
             </div>
         )
     }
@@ -121,7 +155,7 @@ const PrivateRoute = ({component: Component, ...rest}) => (
             <Component {...props}/>
         ) : (
             <Redirect to={{
-                pathname: '/login',
+                pathname: '/', //login
                 state: {from: props.location}
             }}/>
         )
@@ -138,15 +172,17 @@ const AnimationExample = () => {
 
 
     return (<Router>
-
+        <MuiThemeProvider muiTheme={muiTheme}>
         <div style={{display: 'flex', flexDirection: 'column', justifyContent: 'flex-start'}}>
+
             <AuthButton/>
-            <ul style={{display: 'none', backgroundColor: '#fd9'}}>
-                <li><Link to="/public">Public Page</Link></li>
-                <li><Link to="/protected">Protected Page</Link></li>
-            </ul>
+            {/*<ul style={{display: 'block', backgroundColor: '#fd9'}}>*/}
+                {/*<li><Link to="/public">Public Page</Link></li>*/}
+                {/*<li><Link to="/protected">Protected Page</Link></li>*/}
+            {/*</ul>*/}
             <Route path="/show/:s/:l" component={Protected}/>
-            <Route path="/login" component={LoginPage}/>
+            {/*<Route path="/login" component={LoginPage}/>*/}
+            <Route exact={true} path="/" component={LoginPage}/>
             <PrivateRoute path="/add/:s/:l" component={Protected}/>
             <PrivateRoute path="/calendar/:s/:l" component={Protected}/>
             <PrivateRoute path="/channel/:s/:l" component={Protected}/>
@@ -154,6 +190,7 @@ const AnimationExample = () => {
             <PrivateRoute path="/list/:s/:l" component={Protected}/>
 
         </div>
+        </MuiThemeProvider>
     </Router>)
 }
 
@@ -165,104 +202,13 @@ const NavLink = (props) => (
 )
 
 
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import * as colors from 'material-ui/styles/colors';
-import {fade} from 'material-ui/utils/colorManipulator';
-import './routing.scss'
 
-
-import AddPage from '../components/Add'
-import ListPage from '../components/List'
-import ChannelPage from '../components/Channel'
-
-const muiTheme = getMuiTheme({
-
-    palette: {
-        // accent1Color: colors.deepOrange500,
-        // primary1Color: colors.purple500, //cyan500,
-        // primary2Color: colors.cyan700,
-        // primary3Color: colors.grey400,
-        // // accent1Color: pinkA200,
-        // accent2Color: colors.grey100,
-        alertColor: '#ccc',
-        // accent3Color: colors.grey500,
-        // textColor: colors.darkBlack,
-        // alternateTextColor: colors.white,
-        // canvasColor: colors.amber500,
-        // borderColor: colors.grey300,
-        // disabledColor: fade(colors.darkBlack, 0.3),
-        // pickerHeaderColor: colors.cyan500,
-        // clockCircleColor: fade(colors.darkBlack, 0.07),
-        // shadowColor: colors.fullBlack,
-    },
-});
-
-
-import ShowPage from '../components/ShowPage'
 import Paper from 'material-ui/Paper';
-class Page extends Component {
 
 
-    constructor(props) {
-        super(props)
 
 
-        let rP = {
-            'add': <AddPage />,
-            'list': <ListPage />,
-            channel: <ChannelPage companyId={1} postHash={this.props.postHash} />,
-            show: <ShowPage postHash={this.props.postHash}/>
-        };
-
-
-        this.state = {...this.state, renderPage: rP}
-
-
-    }
-
-
-    renderPage() {
-        this.setState({
-            currentPage: this.props.page
-        })
-
-    }
-
-
-    render() {
-
-
-        return (
-            <div style={{overflow: "auto", height: "100%", display: 'flex', justifyContent: 'center'}}>
-                <MuiThemeProvider muiTheme={muiTheme}>
-                    <div className="page-wrap"
-                         style={{width: "100%", maxWidth: '800px', fontFamily: "'Roboto', sans-serif"}}>
-                        <h2 style={{fontSize: '30px', color: 'rgb(0, 188, 212)'}}>{titles[this.props.page] || ''}</h2>
-                        {this.props.page === 'add' || this.props.page === 'channel' ? (
-                            <Paper style={{padding: "20px"}} zDepth={2}>
-                                {this.state.renderPage[this.props.page] || this.state.renderPage['add']}
-                            </Paper>) : this.state.renderPage[this.props.page] || <p style={{fontSize:'18px', color:colors.grey600}}>Доступно владельцам подписки</p>}
-
-
-                    </div>
-
-                </MuiThemeProvider>
-            </div>
-
-        )
-    }
-
-
-}
-
-
-const titles = {
-    add: 'Добавить материал',
-    list: 'Список материалов',//'Список материалов',
-    calendar: 'Календарь',
-    channel: 'Каналы',
-}
+import Page from './renderPage';
 
 const HSL = ({match: {params}}) => {
 
