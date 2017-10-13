@@ -2,13 +2,13 @@ const webpack = require('webpack');
 const path = require('path');
 // const TransferWebpackPlugin = require('transfer-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const fs = require('fs');
-const gracefulFs = require('graceful-fs');
-gracefulFs.gracefulify(fs);
+// const fs = require('fs');
+// const gracefulFs = require('graceful-fs');
+// gracefulFs.gracefulify(fs);
 
 // const UglifyJS = require("uglify-es");
-const BabiliPlugin = require("babili-webpack-plugin");
-const babiliOptions = {}
+// const BabiliPlugin = require("babili-webpack-plugin");
+// const babiliOptions = {}
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const extractPlugin = new ExtractTextPlugin({
     filename: 'bundle.css'
@@ -22,7 +22,7 @@ const config = {
         ],
     },
     // Render source-map file for final build
-    devtool: 'source-map',
+    devtool: 'cheap-module-inline-source-map',
     // output config
     output: {
         path: path.resolve(__dirname, 'build'), // Path of output file
@@ -35,8 +35,51 @@ const config = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
+        // // Minify the bundle
+        // new BabiliPlugin(babiliOptions),
         // Minify the bundle
-        new BabiliPlugin(babiliOptions),
+        new webpack.optimize.UglifyJsPlugin({
+            minimize: true,
+            sourceMap: false,
+            beautify: false,
+            compress: {
+                warnings: false,
+                side_effects: false,
+                properties: true,
+                // sequences: true,
+                // dead_code: false,
+                // conditionals: true,
+                // comparisons: true,
+                // evaluate: true,
+                // booleans: true,
+                // unused: true,
+                // loops: true,
+                // hoist_funs: true,
+                // cascade: true,
+                // if_return: true,
+                // join_vars: true,
+                // drop_debugger: true,
+                unsafe: true,
+                // hoist_vars: true,
+                // negate_iife: true,
+                // unsafe_comps: true,
+                // screw_ie8: true,
+                // pure_getters: true,
+                // drop_console: define.rs_release
+            },
+            // mangle: {
+            //     sort: true,
+            //     eval: true,
+            //     props: false,
+            //     toplevel: true,
+            //     properties: true
+            // },
+            output: {
+                comments: false,
+                space_colon: false
+            },
+            // exclude: [/\.min\.js$/gi]
+        }),
         // new webpack.optimize.UglifyJsPlugin({
         //     sourceMap: true,
         // }),
