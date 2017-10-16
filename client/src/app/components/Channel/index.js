@@ -60,8 +60,6 @@ import NavigationClose from 'material-ui/svg-icons/navigation/close';
 import AddIcon from 'material-ui/svg-icons/content/add';
 import Divider from 'material-ui/Divider';
 
-import Stepper from './confirmStepper';
-
 class ChannelPage extends Component {
 
     constructor(props) {

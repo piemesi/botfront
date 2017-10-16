@@ -8,6 +8,7 @@ import {
 import RaisedButton from 'material-ui/RaisedButton';
 import FlatButton from 'material-ui/FlatButton';
 
+import {botName} from '../config/config.json';
 
 import {withRouter} from 'react-router-dom';
 
@@ -250,7 +251,7 @@ class VerticalLinearStepper extends React.Component {
     render() {
         const {finished, stepIndex} = this.state;
 
-        let linkHash = `https://t.me/softmadebot?start=${this.state.tempAuth}`;
+        let linkHash = `https://t.me/${botName}?start=${this.state.tempAuth}`;
 
         return (
             <div className="StepperDiv" style={{maxWidth: 550, margin: 'auto'}}>
@@ -279,7 +280,7 @@ class VerticalLinearStepper extends React.Component {
                                         Вы авторизованы
                                     </p>   <p><RaisedButton disabled={this.props.channels.companyId} secondary={true}
                                                             label="Перейти"/>
-                                        <br/><span style={{color: '#ccc'}}>команда СТАРТ в регистраионном боте [SoftmadeBot]</span>
+                                        <br/><span style={{color: '#ccc'}}>команда СТАРТ в регистраионном боте [BotMeTop_Bot]</span>
                                     </p>
 
 
@@ -293,7 +294,7 @@ class VerticalLinearStepper extends React.Component {
                                             </p>   <p><Link to={linkHash} target="_blank"><RaisedButton
                                             disabled={this.props.channels.companyId} secondary={true}
                                             label="Перейти"/></Link>
-                                            <br/><span style={{color: '#ccc'}}>команда СТАРТ в регистраионном боте [SoftmadeBot]</span>
+                                            <br/><span style={{color: '#ccc'}}>команда СТАРТ в регистраионном боте [BotMeTop_Bot]</span>
                                         </p>
 
                                             <h3>Выполните команду старт</h3>
