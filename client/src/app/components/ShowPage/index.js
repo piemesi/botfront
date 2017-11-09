@@ -113,7 +113,8 @@ class ShowPage extends Component {
                     padding: '20px 30px',
                     marginTop: '30px', maxWidth: '800px',
                     marginBottom: '30px',
-                    margin: '20 30 30'
+                    margin: '20 30 30',
+                    height: '100%'
                 }}>
                     <main>
                         <div style={{
